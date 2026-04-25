@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import logoBlue from "../../assets/logo-blue.png"
+import brandLogo from "../../assets/nomosiq-branding-logo.svg"
 import { Separator } from "@/components/ui/separator"
 
 export function SiteFooter() {
@@ -11,9 +11,9 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Link to="/" className="mb-4 flex items-center gap-3">
               <img
-                src={logoBlue}
+                src={brandLogo}
                 alt=""
-                className="size-9 rounded-md object-contain"
+                className="size-11 object-contain brightness-0 invert"
               />
               <span className="font-semibold">NomosIQ</span>
             </Link>

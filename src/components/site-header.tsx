@@ -6,7 +6,7 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import logoBlue from "../../assets/logo-blue.png"
+import brandLogo from "../../assets/nomosiq-branding-logo.svg"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -64,9 +64,9 @@ export function SiteHeader() {
           aria-label="NomosIQ home"
         >
           <img
-            src={logoBlue}
+            src={brandLogo}
             alt=""
-            className="size-9 rounded-md object-contain"
+            className="size-11 object-contain brightness-0 invert"
           />
           <span className="text-base font-semibold tracking-normal">
             NomosIQ
@@ -103,9 +103,9 @@ export function SiteHeader() {
               <SheetTitle className="sr-only">Main navigation</SheetTitle>
               <div className="mb-8 flex items-center gap-3">
                 <img
-                  src={logoBlue}
+                  src={brandLogo}
                   alt=""
-                  className="size-9 rounded-md object-contain"
+                  className="size-12 object-contain brightness-0 invert"
                 />
                 <span className="font-semibold">NomosIQ</span>
               </div>

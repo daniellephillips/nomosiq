@@ -119,6 +119,14 @@
 }
 
 @layer base {
+  :root {
+    font-size: 17px;
+  }
+  @media (min-width: 1024px) {
+    :root {
+      font-size: 18px;
+    }
+  }
   * {
     @apply border-border outline-ring/50;
     }
