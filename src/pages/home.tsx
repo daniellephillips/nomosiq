@@ -18,25 +18,59 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { demoUrl } from "@/lib/constants"
 
 const proofBadges = [
-  "Private deployment",
-  "Source-cited answers",
-  "Audit logs and RBAC",
-  "No external LLM APIs",
+  {
+    label: "Private deployment",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "Source-cited answers",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    label: "Audit logs and RBAC",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "No external LLM APIs",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
 ]
 
 const workflowSignals = [
-  "Citation-backed answer",
-  "Audit log visible",
-  "Role-based access",
-  "No external LLM API",
-  "Private inference",
+  {
+    label: "Citation-backed answer",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    label: "Audit log visible",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "Role-based access",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "No external LLM API",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "Private inference",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
 ]
 
 const auditTrail = [
-  "Query submitted",
-  "Source retrieved",
-  "Answer generated",
-  "Review pending",
+  { label: "Query submitted", status: "complete" },
+  { label: "Source retrieved", status: "complete" },
+  { label: "Answer generated", status: "complete" },
+  { label: "Review pending", status: "pending" },
 ]
 
 const useCases = [
@@ -71,7 +105,7 @@ function HeroProductMockup() {
       <CardContent className="grid gap-5 p-5 sm:p-6">
         <div>
           <Badge
-            className="px-3 py-1 text-[14px] leading-[18px]"
+            className="border-accent/30 bg-accent/10 px-3 py-1 text-[14px] leading-[18px] text-accent"
             variant="outline"
           >
             Example workflow
@@ -85,7 +119,7 @@ function HeroProductMockup() {
             </p>
           </div>
           <Badge
-            className="w-fit px-3 py-1 text-[14px] leading-[18px]"
+            className="w-fit border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
             variant="secondary"
           >
             Attorney review required
@@ -111,7 +145,7 @@ function HeroProductMockup() {
                   for thirty (30) days after notice.
                 </p>
               </div>
-              <div className="rounded-xl border-l-2 border-primary bg-primary/10 p-3">
+              <div className="rounded-xl border-l-2 border-accent bg-accent/10 p-3">
                 <p className="text-[15px] leading-6 text-text-body">
                   Highlighted clause: notice period, breach condition, and cure
                   window identified for attorney review.
@@ -129,12 +163,12 @@ function HeroProductMockup() {
               <div className="mt-4 rounded-xl border bg-muted/30 p-4">
                 <div className="mb-3 flex flex-wrap items-center gap-2">
                   <Badge
-                    className="px-3 py-1 text-[14px] leading-[18px]"
+                    className="border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
                     variant="outline"
                   >
                     Review pending
                   </Badge>
-                  <span className="text-[14px] leading-[18px] text-text-soft">
+                  <span className="text-[14px] leading-[18px] text-accent">
                     Confidence: source-backed
                   </span>
                 </div>
@@ -142,11 +176,11 @@ function HeroProductMockup() {
                   The lease allows termination after 60 days&apos; written
                   notice if a material breach remains uncured for 30 days.
                 </p>
-                <div className="mt-4 rounded-xl border border-primary/30 bg-primary/10 p-3">
+                <div className="mt-4 rounded-xl border border-accent/30 bg-accent/10 p-3">
                   <p className="type-ui text-foreground">
                     Source: Section 12.2, Termination for Cause
                   </p>
-                  <span className="mt-2 inline-block text-[15px] leading-5 font-medium text-primary">
+                  <span className="mt-2 inline-block text-[15px] leading-5 font-medium text-accent">
                     Jump to source
                   </span>
                 </div>
@@ -156,12 +190,10 @@ function HeroProductMockup() {
             <div className="grid gap-3 sm:grid-cols-2">
               {workflowSignals.map((signal) => (
                 <div
-                  key={signal}
-                  className="rounded-xl border bg-background px-3 py-2"
+                  key={signal.label}
+                  className={`rounded-xl border px-3 py-2 ${signal.className}`}
                 >
-                  <p className="text-[14px] leading-[18px] text-text-soft">
-                    {signal}
-                  </p>
+                  <p className="text-[14px] leading-[18px]">{signal.label}</p>
                 </div>
               ))}
             </div>
@@ -172,13 +204,15 @@ function HeroProductMockup() {
           <p className="type-ui text-foreground">Audit trail</p>
           <div className="mt-3 grid gap-2 sm:grid-cols-4">
             {auditTrail.map((item) => (
-              <div key={item} className="flex items-center gap-2">
+              <div key={item.label} className="flex items-center gap-2">
                 <span
-                  className="size-2 rounded-full bg-primary"
+                  className={`size-2 rounded-full ${
+                    item.status === "pending" ? "bg-warning" : "bg-accent"
+                  }`}
                   aria-hidden="true"
                 />
                 <span className="text-[14px] leading-[18px] text-text-soft">
-                  {item}
+                  {item.label}
                 </span>
               </div>
             ))}
@@ -196,7 +230,7 @@ export function HomePage() {
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:pt-24 lg:pb-[88px]">
           <div className="max-w-[560px] lg:col-span-6">
             <Badge
-              className="mb-4 w-fit px-3 py-1 text-[14px] leading-[18px]"
+              className="mb-4 w-fit border-accent/30 bg-accent/10 px-3 py-1 text-[14px] leading-[18px] text-accent"
               variant="secondary"
             >
               Private AI for law firms
@@ -221,11 +255,11 @@ export function HomePage() {
             <div className="mt-5 flex flex-wrap gap-2.5">
               {proofBadges.map((badge) => (
                 <Badge
-                  key={badge}
-                  className="px-3 py-1 text-[14px] leading-[18px]"
+                  key={badge.label}
+                  className={`px-3 py-1 text-[14px] leading-[18px] ${badge.className}`}
                   variant="outline"
                 >
-                  {badge}
+                  {badge.label}
                 </Badge>
               ))}
             </div>
