@@ -1,7 +1,10 @@
 import {
+  Audit01Icon,
   FileSearchIcon,
   LegalHammerIcon,
+  Link01Icon,
   LockPasswordIcon,
+  UserGroupIcon,
   TaskDaily01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
@@ -71,6 +74,35 @@ const auditTrail = [
   { label: "Source retrieved", status: "complete" },
   { label: "Answer generated", status: "complete" },
   { label: "Review pending", status: "pending" },
+]
+
+const trustItems = [
+  {
+    icon: LockPasswordIcon,
+    title: "Private deployment",
+    text: "Your data never leaves your environment.",
+    iconClassName:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    icon: Link01Icon,
+    title: "Source-linked answers",
+    text: "Every answer cites its source.",
+    iconClassName: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    icon: Audit01Icon,
+    title: "Full audit visibility",
+    text: "Track usage, sources, and reviews.",
+    iconClassName: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    icon: UserGroupIcon,
+    title: "Built for sensitive work",
+    text: "Trusted by legal teams and advisors.",
+    iconClassName:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
 ]
 
 const useCases = [
@@ -223,6 +255,45 @@ function HeroProductMockup() {
   )
 }
 
+function TrustStrip() {
+  return (
+    <section
+      className="border-b bg-muted/30"
+      aria-label="Nomos AI trust signals"
+    >
+      <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-card md:grid-cols-2 xl:grid-cols-4">
+          {trustItems.map((item, index) => (
+            <div
+              key={item.title}
+              className={`flex gap-4 p-5 ${
+                index > 0 ? "border-t md:border-t-0" : ""
+              } ${
+                index % 2 === 1 ? "md:border-l" : ""
+              } ${index > 1 ? "md:border-t xl:border-t-0" : ""} ${
+                index > 0 ? "xl:border-l" : ""
+              }`}
+            >
+              <div
+                className={`flex size-11 shrink-0 items-center justify-center rounded-xl border ${item.iconClassName}`}
+                aria-hidden="true"
+              >
+                <HugeiconsIcon icon={item.icon} className="size-5" />
+              </div>
+              <div>
+                <h2 className="type-ui text-foreground">{item.title}</h2>
+                <p className="mt-1 text-[14px] leading-[18px] text-text-soft">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export function HomePage() {
   return (
     <>
@@ -268,6 +339,8 @@ export function HomePage() {
           <HeroProductMockup />
         </div>
       </section>
+
+      <TrustStrip />
 
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
