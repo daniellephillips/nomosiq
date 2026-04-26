@@ -60,9 +60,10 @@ export function ProductPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <div>
-          <h2 className="text-3xl font-semibold tracking-normal">
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="max-w-[680px]">
+          <Badge variant="secondary">Capabilities</Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
             Core system capabilities
           </h2>
           <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
@@ -70,10 +71,13 @@ export function ProductPage() {
             workflow automation for document-heavy legal teams.
           </p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {capabilities.map((capability) => (
-            <Card key={capability}>
-              <CardContent className="p-5">
+            <Card
+              key={capability}
+              className="h-full min-h-28 rounded-2xl border bg-card"
+            >
+              <CardContent className="flex h-full items-start p-6">
                 <p className="font-medium">{capability}</p>
               </CardContent>
             </Card>

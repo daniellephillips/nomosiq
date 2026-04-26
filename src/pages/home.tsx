@@ -5,7 +5,6 @@ import {
   TaskDaily01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Link } from "react-router-dom"
 
 import {
   Accordion,
@@ -21,30 +20,31 @@ import { demoUrl } from "@/lib/constants"
 const proofBadges = [
   "Private deployment",
   "Source-cited answers",
-  "Audit logs and RBAC",
-  "No external LLM APIs",
+  "Audit logs",
+  "Role-based access",
+  "Built for legal workflows",
 ]
 
 const useCases = [
   {
     icon: FileSearchIcon,
     title: "Document intelligence",
-    text: "Ask legal documents plain-language questions and receive cited answers tied to source material.",
+    text: "Ask questions across leases, pleadings, transcripts, contracts, and discovery files. Get plain-language answers with citations tied to source material.",
   },
   {
     icon: LegalHammerIcon,
     title: "Litigation support",
-    text: "Summarize pleadings, transcripts, and evidence while extracting key facts, people, dates, and timelines.",
+    text: "Summarize pleadings, transcripts, and evidence while extracting key facts, people, dates, and timelines for review.",
   },
   {
     icon: TaskDaily01Icon,
     title: "Contract review",
-    text: "Identify clauses, flag deviations from firm standards, and generate internal risk summaries.",
+    text: "Identify key clauses, flag deviations from firm standards, and generate structured review notes faster.",
   },
   {
     icon: LockPasswordIcon,
     title: "Redaction checks",
-    text: "Detect sensitive information before filing to reduce risk from missed redactions.",
+    text: "Detect sensitive information such as names, account numbers, and addresses before filing or sharing.",
   },
 ]
 
@@ -55,24 +55,24 @@ export function HomePage() {
         <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
           <div className="flex max-w-3xl flex-col justify-center">
             <Badge className="mb-5 w-fit" variant="secondary">
-              Private AI workflow systems for law firms
+              Private AI for law firms
             </Badge>
             <h1 className="max-w-4xl text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl lg:text-6xl">
-              Private AI for law firms. No data leaves your system.
+              Private AI for law firms. Cited answers. No client data leaves
+              your system.
             </h1>
             <p className="mt-6 max-w-2xl text-[18px] leading-[1.65] text-text-body">
-              Nomos AI helps legal teams query documents, review clauses, build
-              timelines, and check redactions with source-cited answers inside
-              the firm&apos;s controlled environment.
+              Nomos AI helps law firms search, summarize, review, and redact
+              sensitive documents using AI deployed inside the firm&apos;s
+              controlled environment. Get source-cited answers, role-based
+              access, and audit visibility without sending client data to public
+              AI tools.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <a href={demoUrl} target="_blank" rel="noreferrer">
                   Book Demo
                 </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/security">View Security Approach</Link>
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap gap-2">
@@ -122,8 +122,13 @@ export function HomePage() {
         <div className="max-w-2xl">
           <Badge variant="secondary">High-frequency workflows</Badge>
           <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Built for the legal work that consumes review hours.
+            Turn legal documents into workflows your attorneys can verify.
           </h2>
+          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+            Nomos AI is designed for document-heavy practices that need faster
+            review without compromising confidentiality, supervision, or
+            internal controls.
+          </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {useCases.map((item) => (
@@ -151,17 +156,14 @@ export function HomePage() {
           <div>
             <Badge variant="secondary">Security-led adoption</Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-              Designed for firms that cannot use public AI on client data.
+              Private AI for legal teams that need control.
             </h2>
             <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-              Nomos AI is positioned as a private AI layer between existing
-              legal systems and firm knowledge. The system supports private
-              deployment, cited retrieval, access controls, and audit visibility
-              without relying on external LLM APIs for sensitive work.
+              Nomos AI is built for firms that cannot use public AI tools on
+              client documents. It provides a private AI layer inside your
+              environment with source-cited retrieval, access controls, and
+              audit visibility.
             </p>
-            <Button asChild className="mt-6" variant="outline">
-              <Link to="/product">Explore Product</Link>
-            </Button>
           </div>
           <Accordion
             type="single"

@@ -12,19 +12,19 @@ import { demoUrl } from "@/lib/constants"
 const controls = [
   {
     title: "Private deployment",
-    text: "Designed for controlled firm infrastructure, including private cloud or on-prem environments.",
+    text: "Deploy in private cloud or on-prem environments so sensitive documents stay within firm-controlled infrastructure.",
   },
   {
     title: "No external LLM APIs",
-    text: "Sensitive document workflows are positioned around private inference instead of public API exposure.",
+    text: "Keep sensitive document workflows away from public AI tools and external model APIs.",
   },
   {
     title: "Audit visibility",
-    text: "Workflow activity should be observable for supervision, review, and internal accountability.",
+    text: "Review workflow activity through audit visibility for supervision and internal accountability.",
   },
   {
     title: "Role-based access",
-    text: "Access controls align AI document workflows with the firm's internal permission boundaries.",
+    text: "Align AI document workflows with the firm's internal permission boundaries.",
   },
 ]
 
@@ -38,8 +38,8 @@ export function SecurityPage() {
             AI adoption for legal teams starts with control.
           </h1>
           <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
-            Nomos AI is built around the practical constraints that keep firms
-            from using public AI tools on client documents: confidentiality,
+            Nomos AI is built around the constraints that prevent firms from
+            using public AI tools on client documents: confidentiality,
             supervision, access control, and auditability.
           </p>
           <Button asChild className="mt-8" size="lg">
@@ -75,7 +75,7 @@ export function SecurityPage() {
               Built for firms that need explainable AI outputs.
             </h2>
             <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-              The system emphasizes cited retrieval and audit-ready workflows so
+              Nomos AI emphasizes cited retrieval and audit-ready workflows so
               legal teams can review the source material behind an answer before
               using it in client work.
             </p>
