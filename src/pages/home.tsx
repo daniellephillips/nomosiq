@@ -20,9 +20,8 @@ import { demoUrl } from "@/lib/constants"
 const proofBadges = [
   "Private deployment",
   "Source-cited answers",
-  "Audit logs",
-  "Role-based access",
-  "Built for legal workflows",
+  "Audit logs and RBAC",
+  "No external LLM APIs",
 ]
 
 const useCases = [
@@ -52,39 +51,45 @@ export function HomePage() {
   return (
     <>
       <section className="border-b bg-muted/30">
-        <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
-          <div className="flex max-w-3xl flex-col justify-center">
-            <Badge className="mb-5 w-fit" variant="secondary">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:px-8 lg:pt-24 lg:pb-20">
+          <div className="flex max-w-[620px] flex-col justify-center lg:col-span-6">
+            <Badge
+              className="mb-5 w-fit px-3 py-1 text-[14px] leading-[18px]"
+              variant="secondary"
+            >
               Private AI for law firms
             </Badge>
-            <h1 className="max-w-4xl text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl lg:text-6xl">
-              Private AI for law firms. Cited answers. No client data leaves
-              your system.
+            <h1 className="type-h1 text-foreground">
+              Private AI for legal teams handling sensitive documents.
             </h1>
-            <p className="mt-6 max-w-2xl text-[18px] leading-[1.65] text-text-body">
-              Nomos AI helps law firms search, summarize, review, and redact
-              sensitive documents using AI deployed inside the firm&apos;s
-              controlled environment. Get source-cited answers, role-based
-              access, and audit visibility without sending client data to public
-              AI tools.
+            <p className="mt-6 max-w-[620px] text-[20px] leading-[1.6] text-text-body">
+              Search, review, summarize, and validate legal documents with cited
+              answers inside your firm&apos;s environment.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild size="lg">
                 <a href={demoUrl} target="_blank" rel="noreferrer">
                   Book Demo
                 </a>
               </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="#security">View Security Approach</a>
+              </Button>
             </div>
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-2.5">
               {proofBadges.map((badge) => (
-                <Badge key={badge} variant="outline">
+                <Badge
+                  key={badge}
+                  className="px-3 py-1 text-[14px] leading-[18px]"
+                  variant="outline"
+                >
                   {badge}
                 </Badge>
               ))}
             </div>
           </div>
 
-          <Card className="self-center border-primary/20">
+          <Card className="self-center border-primary/20 lg:col-span-6">
             <CardHeader>
               <CardTitle>Legal document query</CardTitle>
             </CardHeader>
@@ -151,7 +156,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-y bg-muted/30">
+      <section id="security" className="border-y bg-muted/30">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <Badge variant="secondary">Security-led adoption</Badge>
