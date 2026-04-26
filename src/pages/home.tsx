@@ -133,6 +133,51 @@ const useCases = [
   },
 ]
 
+const howItWorksSteps = [
+  {
+    title: "Ingest",
+    text: "Connect or upload documents into the firm-controlled environment.",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    title: "Retrieve",
+    text: "Ask questions or trigger workflows across matters, clauses, transcripts, and filings.",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    title: "Cite and review",
+    text: "Every answer links back to source text so attorneys can verify before acting.",
+    className:
+      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+  },
+]
+
+const workflowFlow = [
+  {
+    label: "Document set",
+    detail: "Firm-controlled workspace",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    label: "Query",
+    detail: "Targeted legal question",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    label: "Source-backed answer",
+    detail: "Cited response with source text",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    label: "Attorney review",
+    detail: "Human verification before action",
+    className:
+      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+  },
+]
+
 function HeroProductMockup() {
   return (
     <Card
@@ -299,6 +344,91 @@ function TrustStrip() {
   )
 }
 
+function HowItWorksSection() {
+  return (
+    <section className="border-y bg-muted/30">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div className="max-w-[640px]">
+          <Badge
+            className="border-accent/30 bg-accent/10 text-accent"
+            variant="secondary"
+          >
+            How it works
+          </Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
+            Query, review, and validate inside your environment.
+          </h2>
+          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+            Nomos AI turns legal document review into a controlled workflow:
+            ingest matter materials, ask targeted questions, and verify every
+            answer against source text before attorneys act.
+          </p>
+          <div className="mt-8 grid gap-4">
+            {howItWorksSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="grid gap-4 rounded-2xl border bg-card p-5 sm:grid-cols-[auto_1fr]"
+              >
+                <div
+                  className={`flex size-10 items-center justify-center rounded-xl border text-[15px] leading-5 font-semibold ${step.className}`}
+                  aria-hidden="true"
+                >
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="type-ui text-foreground">{step.title}</h3>
+                  <p className="mt-1 text-[16px] leading-[1.6] text-text-soft">
+                    {step.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Card className="self-start rounded-2xl border bg-card">
+          <CardContent className="grid gap-4 p-5 sm:p-6">
+            <div>
+              <Badge
+                className="border-success-border bg-success-muted text-success-foreground dark:text-success"
+                variant="outline"
+              >
+                Private workflow
+              </Badge>
+              <p className="mt-4 text-[18px] leading-[1.5] font-medium text-foreground">
+                Document set → Query → Source-backed answer → Attorney review
+              </p>
+            </div>
+            <div className="grid gap-3">
+              {workflowFlow.map((item, index) => (
+                <div
+                  key={item.label}
+                  className="grid gap-3 rounded-2xl border bg-background p-4 sm:grid-cols-[auto_1fr]"
+                >
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-xl border ${item.className}`}
+                    aria-hidden="true"
+                  >
+                    <span className="text-[14px] leading-[18px] font-semibold">
+                      {index + 1}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="type-ui text-foreground">{item.label}</p>
+                    <p className="mt-1 text-[15px] leading-5 text-text-soft">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  )
+}
+
 export function HomePage() {
   return (
     <>
@@ -359,7 +489,7 @@ export function HomePage() {
             Built for the legal work that eats review time.
           </h2>
           <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            NOMOS AI helps document-heavy practices review, summarize, and
+            Nomos AI helps document-heavy practices review, summarize, and
             verify legal materials faster without losing citation, privacy, or
             attorney oversight.
           </p>
@@ -388,6 +518,8 @@ export function HomePage() {
           ))}
         </div>
       </section>
+
+      <HowItWorksSection />
 
       <section id="security" className="border-y bg-muted/30">
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
