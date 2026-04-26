@@ -6,10 +6,14 @@ import "./index.css"
 import App from "./App.tsx"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
 
+const routerBasename = window.location.hostname.endsWith("github.io")
+  ? "/nomosiq"
+  : undefined
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="nomosiq-theme">
-      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+      <BrowserRouter basename={routerBasename}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
