@@ -109,22 +109,27 @@ const useCases = [
   {
     icon: FileSearchIcon,
     title: "Document intelligence",
-    text: "Ask questions across leases, pleadings, transcripts, contracts, and discovery files. Get plain-language answers with citations tied to source material.",
+    text: "Ask questions across leases, pleadings, transcripts, contracts, and discovery files with cited answers tied to source material.",
+    iconClassName: "border-accent/30 bg-accent/10 text-accent",
   },
   {
     icon: LegalHammerIcon,
     title: "Litigation support",
     text: "Summarize pleadings, transcripts, and evidence while extracting key facts, people, dates, and timelines for review.",
+    iconClassName:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
   },
   {
     icon: TaskDaily01Icon,
     title: "Contract review",
     text: "Identify key clauses, flag deviations from firm standards, and generate structured review notes faster.",
+    iconClassName: "border-accent/30 bg-accent/10 text-accent",
   },
   {
     icon: LockPasswordIcon,
     title: "Redaction checks",
     text: "Detect sensitive information such as names, account numbers, and addresses before filing or sharing.",
+    iconClassName: "border-accent/30 bg-accent/10 text-accent",
   },
 ]
 
@@ -343,29 +348,38 @@ export function HomePage() {
       <TrustStrip />
 
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <Badge variant="secondary">High-frequency workflows</Badge>
+        <div className="max-w-[680px]">
+          <Badge
+            className="border-accent/30 bg-accent/10 text-accent"
+            variant="secondary"
+          >
+            High-frequency workflows
+          </Badge>
           <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Turn legal documents into workflows your attorneys can verify.
+            Built for the legal work that eats review time.
           </h2>
           <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            Nomos AI is designed for document-heavy practices that need faster
-            review without compromising confidentiality, supervision, or
-            internal controls.
+            NOMOS AI helps document-heavy practices review, summarize, and
+            verify legal materials faster without losing citation, privacy, or
+            attorney oversight.
           </p>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {useCases.map((item) => (
-            <Card key={item.title}>
-              <CardHeader>
-                <HugeiconsIcon
-                  icon={item.icon}
-                  className="mb-3 size-6 text-primary"
-                  aria-hidden
-                />
+            <Card
+              key={item.title}
+              className="h-full rounded-2xl border bg-card transition-colors hover:border-accent/30 hover:bg-muted/40"
+            >
+              <CardHeader className="p-6 pb-3">
+                <div
+                  className={`mb-4 flex size-11 items-center justify-center rounded-xl border ${item.iconClassName}`}
+                  aria-hidden="true"
+                >
+                  <HugeiconsIcon icon={item.icon} className="size-5" />
+                </div>
                 <CardTitle className="type-h3">{item.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-6 pt-0 pb-6">
                 <p className="text-[16px] leading-[1.6] text-text-soft">
                   {item.text}
                 </p>
