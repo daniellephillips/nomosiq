@@ -24,6 +24,21 @@ const proofBadges = [
   "No external LLM APIs",
 ]
 
+const workflowSignals = [
+  "Citation-backed answer",
+  "Audit log visible",
+  "Role-based access",
+  "No external LLM API",
+  "Private inference",
+]
+
+const auditTrail = [
+  "Query submitted",
+  "Source retrieved",
+  "Answer generated",
+  "Review pending",
+]
+
 const useCases = [
   {
     icon: FileSearchIcon,
@@ -47,14 +62,141 @@ const useCases = [
   },
 ]
 
+function HeroProductMockup() {
+  return (
+    <Card
+      className="w-full max-w-[540px] overflow-hidden rounded-2xl border bg-card lg:col-span-6 lg:mt-3 lg:justify-self-end"
+      aria-label="Product mockup showing legal document review with cited AI answer and audit trail."
+    >
+      <CardContent className="grid gap-5 p-5 sm:p-6">
+        <div>
+          <Badge
+            className="px-3 py-1 text-[14px] leading-[18px]"
+            variant="outline"
+          >
+            Example workflow
+          </Badge>
+        </div>
+        <div className="flex flex-col gap-3 border-b pb-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="type-ui text-foreground">Matter: Lease Review</p>
+            <p className="mt-1 text-[15px] leading-5 text-text-soft">
+              Commercial Lease · 14 pages · Private workspace
+            </p>
+          </div>
+          <Badge
+            className="w-fit px-3 py-1 text-[14px] leading-[18px]"
+            variant="secondary"
+          >
+            Attorney review required
+          </Badge>
+        </div>
+
+        <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+          <div className="rounded-2xl border bg-background p-4">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <p className="type-ui text-foreground">Source document</p>
+              <span className="text-[14px] leading-[18px] text-text-soft">
+                Lease_Agreement.pdf
+              </span>
+            </div>
+            <div className="space-y-4 rounded-xl border bg-muted/30 p-4">
+              <div>
+                <p className="type-ui text-foreground">
+                  Section 12.2 — Termination for Cause
+                </p>
+                <p className="mt-3 text-[15px] leading-6 text-text-body">
+                  Either party may terminate this agreement with sixty (60)
+                  days&apos; written notice if a material breach remains uncured
+                  for thirty (30) days after notice.
+                </p>
+              </div>
+              <div className="rounded-xl border-l-2 border-primary bg-primary/10 p-3">
+                <p className="text-[15px] leading-6 text-text-body">
+                  Highlighted clause: notice period, breach condition, and cure
+                  window identified for attorney review.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <div className="rounded-2xl border bg-background p-4">
+              <p className="type-ui text-text-soft">Question</p>
+              <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
+                What are the termination rights in this lease?
+              </p>
+              <div className="mt-4 rounded-xl border bg-muted/30 p-4">
+                <div className="mb-3 flex flex-wrap items-center gap-2">
+                  <Badge
+                    className="px-3 py-1 text-[14px] leading-[18px]"
+                    variant="outline"
+                  >
+                    Review pending
+                  </Badge>
+                  <span className="text-[14px] leading-[18px] text-text-soft">
+                    Confidence: source-backed
+                  </span>
+                </div>
+                <p className="text-[16px] leading-[1.6] text-text-body">
+                  The lease allows termination after 60 days&apos; written
+                  notice if a material breach remains uncured for 30 days.
+                </p>
+                <div className="mt-4 rounded-xl border border-primary/30 bg-primary/10 p-3">
+                  <p className="type-ui text-foreground">
+                    Source: Section 12.2, Termination for Cause
+                  </p>
+                  <span className="mt-2 inline-block text-[15px] leading-5 font-medium text-primary">
+                    Jump to source
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {workflowSignals.map((signal) => (
+                <div
+                  key={signal}
+                  className="rounded-xl border bg-background px-3 py-2"
+                >
+                  <p className="text-[14px] leading-[18px] text-text-soft">
+                    {signal}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border bg-background p-4">
+          <p className="type-ui text-foreground">Audit trail</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-4">
+            {auditTrail.map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <span
+                  className="size-2 rounded-full bg-primary"
+                  aria-hidden="true"
+                />
+                <span className="text-[14px] leading-[18px] text-text-soft">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
 export function HomePage() {
   return (
     <>
       <section className="border-b bg-muted/30">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:px-8 lg:pt-24 lg:pb-20">
-          <div className="flex max-w-[620px] flex-col justify-center lg:col-span-6">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:pt-24 lg:pb-[88px]">
+          <div className="max-w-[560px] lg:col-span-6">
             <Badge
-              className="mb-5 w-fit px-3 py-1 text-[14px] leading-[18px]"
+              className="mb-4 w-fit px-3 py-1 text-[14px] leading-[18px]"
               variant="secondary"
             >
               Private AI for law firms
@@ -66,7 +208,7 @@ export function HomePage() {
               Search, review, summarize, and validate legal documents with cited
               answers inside your firm&apos;s environment.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild size="lg">
                 <a href={demoUrl} target="_blank" rel="noreferrer">
                   Book Demo
@@ -76,7 +218,7 @@ export function HomePage() {
                 <a href="#security">View Security Approach</a>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap gap-2.5">
+            <div className="mt-5 flex flex-wrap gap-2.5">
               {proofBadges.map((badge) => (
                 <Badge
                   key={badge}
@@ -89,37 +231,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <Card className="self-center border-primary/20 lg:col-span-6">
-            <CardHeader>
-              <CardTitle>Legal document query</CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-4">
-              <div className="rounded-lg border bg-background p-4">
-                <p className="type-ui text-text-soft">Question</p>
-                <p className="mt-2 text-[18px] leading-[1.65] text-text-body">
-                  What is the termination clause in this lease?
-                </p>
-              </div>
-              <div className="rounded-lg border bg-muted/40 p-4">
-                <p className="type-ui text-text-soft">Cited answer</p>
-                <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
-                  The lease allows termination with written notice after a
-                  defined cure period. The answer links back to the exact source
-                  section for attorney review.
-                </p>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-3">
-                {["Ingest", "Retrieve", "Cite"].map((step) => (
-                  <div
-                    key={step}
-                    className="type-ui rounded-lg border bg-background p-3 text-center"
-                  >
-                    {step}
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          <HeroProductMockup />
         </div>
       </section>
 
