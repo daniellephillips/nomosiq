@@ -14,7 +14,7 @@ export function ContactPage() {
         <h1 className="mt-5 text-4xl leading-tight font-semibold tracking-normal sm:text-5xl">
           See private AI workflows on legal documents.
         </h1>
-        <p className="mt-5 text-lg leading-8 text-muted-foreground">
+        <p className="mt-5 text-[18px] leading-[1.65] text-text-body">
           Schedule time to review document ingestion, cited answers, redaction
           checks, workflow automation, and deployment fit for your firm.
         </p>
@@ -23,7 +23,7 @@ export function ContactPage() {
             Book Demo
           </a>
         </Button>
-        <p className="mt-5 text-sm text-muted-foreground">
+        <p className="type-fine mt-5 text-text-soft">
           Prefer email?{" "}
           <a
             className="font-medium text-foreground"
@@ -64,7 +64,7 @@ export function ContactPage() {
                 readOnly
               />
             </div>
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="text-[16px] leading-[1.6] text-text-soft">
               This checklist is informational in v1. Demo requests are handled
               through Calendly.
             </p>

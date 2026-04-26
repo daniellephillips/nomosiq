@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import {
   Menu01Icon,
@@ -6,7 +7,8 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import brandLogo from "../../assets/nomosiq-branding-logo.svg"
+import gazelleLogo from "../../assets/nomos-ai-gazelle-white.svg"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -44,7 +46,7 @@ function NavItem({
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-text-soft transition-colors hover:text-foreground",
           isActive && "bg-muted text-foreground"
         )
       }
@@ -55,21 +57,43 @@ function NavItem({
 }
 
 export function SiteHeader() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 8)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b bg-background/95 transition-[border-color,backdrop-filter,background-color]",
+        isScrolled
+          ? "border-border-subtle backdrop-blur-md"
+          : "border-transparent backdrop-blur-none"
+      )}
+    >
+      <div className="mx-auto flex h-[64px] w-full max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-6">
         <Link
           to="/"
-          className="flex items-center gap-3"
-          aria-label="NomosIQ home"
+          className="flex min-h-11 items-center gap-4"
+          aria-label="Nomos AI home"
         >
           <img
-            src={brandLogo}
-            alt=""
-            className="size-11 object-contain brightness-0 invert"
+            src={gazelleLogo}
+            alt="Nomos AI gazelle mark"
+            className="h-9 w-auto object-contain brightness-0 md:h-11 dark:invert"
           />
-          <span className="text-base font-semibold tracking-normal">
-            NomosIQ
+          <span className="font-heading text-[19px] leading-5 font-semibold tracking-normal text-foreground">
+            Nomos AI
           </span>
         </Link>
 
@@ -85,7 +109,8 @@ export function SiteHeader() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <Button asChild>
+          <ThemeToggle />
+          <Button asChild size="lg">
             <a href={demoUrl} target="_blank" rel="noreferrer">
               Book Demo
             </a>
@@ -103,11 +128,16 @@ export function SiteHeader() {
               <SheetTitle className="sr-only">Main navigation</SheetTitle>
               <div className="mb-8 flex items-center gap-3">
                 <img
-                  src={brandLogo}
-                  alt=""
-                  className="size-12 object-contain brightness-0 invert"
+                  src={gazelleLogo}
+                  alt="Nomos AI gazelle mark"
+                  className="h-9 w-auto object-contain brightness-0 dark:invert"
                 />
-                <span className="font-semibold">NomosIQ</span>
+                <span className="font-heading text-[18px] leading-5 font-semibold">
+                  Nomos AI
+                </span>
+                <div className="ml-auto">
+                  <ThemeToggle />
+                </div>
               </div>
               <nav className="grid gap-2" aria-label="Mobile primary">
                 {navItems.map((item) => (
@@ -115,12 +145,12 @@ export function SiteHeader() {
                 ))}
               </nav>
               <div className="mt-8 grid gap-3">
-                <Button asChild>
+                <Button asChild size="lg">
                   <a href={demoUrl} target="_blank" rel="noreferrer">
                     Book Demo
                   </a>
                 </Button>
-                <div className="grid gap-2 text-sm text-muted-foreground">
+                <div className="type-ui grid gap-2 text-text-soft">
                   <div className="flex items-center gap-2">
                     <HugeiconsIcon icon={SecurityCheckIcon} aria-hidden />
                     No external LLM APIs

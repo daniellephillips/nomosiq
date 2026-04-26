@@ -42,8 +42,8 @@ export function ProductPage() {
           <h1 className="mt-5 max-w-4xl text-4xl leading-tight font-semibold tracking-normal sm:text-5xl">
             A private AI layer for legal document workflows.
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
-            NomosIQ sits between a firm&apos;s existing legal systems and its
+          <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
+            Nomos AI sits between a firm&apos;s existing legal systems and its
             internal knowledge, making sensitive documents searchable,
             explainable, and usable without sending them to public AI tools.
           </p>
@@ -65,7 +65,7 @@ export function ProductPage() {
           <h2 className="text-3xl font-semibold tracking-normal">
             Core system capabilities
           </h2>
-          <p className="mt-4 leading-7 text-muted-foreground">
+          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
             The platform is built around private retrieval, source citation, and
             workflow automation for document-heavy legal teams.
           </p>
@@ -96,7 +96,7 @@ export function ProductPage() {
                   <CardTitle>{workflow.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="leading-7 text-muted-foreground">
+                  <p className="text-[16px] leading-[1.6] text-text-soft">
                     {workflow.text}
                   </p>
                 </CardContent>

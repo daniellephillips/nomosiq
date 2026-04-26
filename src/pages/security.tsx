@@ -37,8 +37,8 @@ export function SecurityPage() {
           <h1 className="mt-5 max-w-4xl text-4xl leading-tight font-semibold tracking-normal sm:text-5xl">
             AI adoption for legal teams starts with control.
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
-            NomosIQ is built around the practical constraints that keep firms
+          <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
+            Nomos AI is built around the practical constraints that keep firms
             from using public AI tools on client documents: confidentiality,
             supervision, access control, and auditability.
           </p>
@@ -58,7 +58,7 @@ export function SecurityPage() {
                 <CardTitle>{control.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="leading-7 text-muted-foreground">
+                <p className="text-[16px] leading-[1.6] text-text-soft">
                   {control.text}
                 </p>
               </CardContent>
@@ -74,7 +74,7 @@ export function SecurityPage() {
             <h2 className="mt-4 text-3xl font-semibold tracking-normal">
               Built for firms that need explainable AI outputs.
             </h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
+            <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
               The system emphasizes cited retrieval and audit-ready workflows so
               legal teams can review the source material behind an answer before
               using it in client work.
@@ -87,10 +87,10 @@ export function SecurityPage() {
           >
             <AccordionItem value="ethics">
               <AccordionTrigger>
-                Does NomosIQ replace attorney review?
+                Does Nomos AI replace attorney review?
               </AccordionTrigger>
               <AccordionContent>
-                No. The site positions NomosIQ as workflow infrastructure that
+                No. The site positions Nomos AI as workflow infrastructure that
                 helps attorneys find, summarize, and inspect source material.
               </AccordionContent>
             </AccordionItem>

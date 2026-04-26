@@ -60,8 +60,8 @@ export function HomePage() {
             <h1 className="max-w-4xl text-4xl leading-tight font-semibold tracking-normal text-foreground sm:text-5xl lg:text-6xl">
               Private AI for law firms. No data leaves your system.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              NomosIQ helps legal teams query documents, review clauses, build
+            <p className="mt-6 max-w-2xl text-[18px] leading-[1.65] text-text-body">
+              Nomos AI helps legal teams query documents, review clauses, build
               timelines, and check redactions with source-cited answers inside
               the firm&apos;s controlled environment.
             </p>
@@ -90,18 +90,14 @@ export function HomePage() {
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="rounded-lg border bg-background p-4">
-                <p className="text-sm font-medium text-muted-foreground">
-                  Question
-                </p>
-                <p className="mt-2 text-lg">
+                <p className="type-ui text-text-soft">Question</p>
+                <p className="mt-2 text-[18px] leading-[1.65] text-text-body">
                   What is the termination clause in this lease?
                 </p>
               </div>
               <div className="rounded-lg border bg-muted/40 p-4">
-                <p className="text-sm font-medium text-muted-foreground">
-                  Cited answer
-                </p>
-                <p className="mt-2 leading-7">
+                <p className="type-ui text-text-soft">Cited answer</p>
+                <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
                   The lease allows termination with written notice after a
                   defined cure period. The answer links back to the exact source
                   section for attorney review.
@@ -111,7 +107,7 @@ export function HomePage() {
                 {["Ingest", "Retrieve", "Cite"].map((step) => (
                   <div
                     key={step}
-                    className="rounded-lg border bg-background p-3 text-center text-sm font-medium"
+                    className="type-ui rounded-lg border bg-background p-3 text-center"
                   >
                     {step}
                   </div>
@@ -138,10 +134,10 @@ export function HomePage() {
                   className="mb-3 size-6 text-primary"
                   aria-hidden
                 />
-                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardTitle className="type-h3">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm leading-6 text-muted-foreground">
+                <p className="text-[16px] leading-[1.6] text-text-soft">
                   {item.text}
                 </p>
               </CardContent>
@@ -157,9 +153,9 @@ export function HomePage() {
             <h2 className="mt-4 text-3xl font-semibold tracking-normal">
               Designed for firms that cannot use public AI on client data.
             </h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              NomosIQ is positioned as a private AI layer between existing legal
-              systems and firm knowledge. The system supports private
+            <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+              Nomos AI is positioned as a private AI layer between existing
+              legal systems and firm knowledge. The system supports private
               deployment, cited retrieval, access controls, and audit visibility
               without relying on external LLM APIs for sensitive work.
             </p>
