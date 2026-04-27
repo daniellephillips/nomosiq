@@ -277,7 +277,7 @@ function HeroProductMockup() {
                 Lease_Agreement.pdf
               </span>
             </div>
-            <div className="space-y-4 rounded-xl border bg-surface-2 p-4">
+            <div className="space-y-4 rounded-xl border bg-card p-4">
               <div>
                 <p className="type-ui text-foreground">
                   Section 12.2 — Termination for Cause
@@ -303,7 +303,7 @@ function HeroProductMockup() {
               <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
                 What are the termination rights in this lease?
               </p>
-              <div className="mt-4 rounded-xl border bg-surface-2 p-4">
+              <div className="mt-4 rounded-xl border bg-card p-4">
                 <div className="mb-3 flex flex-wrap items-center gap-2">
                   <Badge
                     className="border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
@@ -373,7 +373,7 @@ function TrustStrip() {
       aria-label="Nomos AI trust and deployment highlights"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-surface-2 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-card md:grid-cols-2 xl:grid-cols-4">
           {trustItems.map((item, index) => (
             <div
               key={item.title}
@@ -393,7 +393,7 @@ function TrustStrip() {
               </div>
               <div>
                 <p className="type-ui text-foreground">{item.title}</p>
-                <p className="mt-1 text-[14px] leading-[18px] text-text-soft">
+                <p className="mt-1 text-[14px] leading-[18px] text-muted-foreground">
                   {item.text}
                 </p>
               </div>
@@ -438,7 +438,7 @@ function HowItWorksSection() {
                 </div>
                 <div>
                   <h3 className="type-ui text-foreground">{step.title}</h3>
-                  <p className="mt-1 text-[16px] leading-[1.6] text-text-soft">
+                  <p className="mt-1 text-[16px] leading-[1.6] text-muted-foreground">
                     {step.text}
                   </p>
                 </div>
@@ -467,7 +467,7 @@ function HowItWorksSection() {
                   className="grid gap-3 border-b p-4 last:border-b-0 sm:grid-cols-[auto_1fr]"
                 >
                   <div
-                    className={`flex size-9 items-center justify-center rounded-full border bg-surface-2 ${item.className}`}
+                    className={`flex size-9 items-center justify-center rounded-full border bg-card ${item.className}`}
                     aria-hidden="true"
                   >
                     <span className="text-[15px] leading-none font-bold tabular-nums">
@@ -476,7 +476,7 @@ function HowItWorksSection() {
                   </div>
                   <div>
                     <p className="type-ui text-foreground">{item.label}</p>
-                    <p className="mt-1 text-[15px] leading-5 text-text-soft">
+                    <p className="mt-1 text-[15px] leading-5 text-muted-foreground">
                       {item.detail}
                     </p>
                   </div>
@@ -509,11 +509,11 @@ function SecurityAdoptionSection() {
             source-cited retrieval, access controls, and audit visibility for
             sensitive legal workflows.
           </p>
-          <div className="mt-6 rounded-2xl border border-success-border bg-surface-2 p-5">
+          <div className="mt-6 rounded-2xl border border-success-border bg-card p-5">
             <p className="type-ui text-success-foreground dark:text-success">
               Built around firm-controlled review.
             </p>
-            <p className="mt-2 text-[15px] leading-6 text-text-soft">
+            <p className="mt-2 text-[15px] leading-6 text-muted-foreground">
               Security controls are presented as part of the legal workflow, not
               as a separate dashboard attorneys have to interpret.
             </p>
@@ -524,12 +524,12 @@ function SecurityAdoptionSection() {
           {securityDetails.map((detail) => (
             <Card
               key={detail.title}
-              className="rounded-2xl border bg-surface-2"
+              className="rounded-2xl border bg-card"
             >
               <CardContent className={`border-t-2 p-5 ${detail.className}`}>
                 <div>
                   <h3 className="type-ui text-foreground">{detail.title}</h3>
-                  <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
+                  <p className="mt-2 text-[16px] leading-[1.6] text-muted-foreground">
                     {detail.text}
                   </p>
                 </div>
@@ -680,7 +680,7 @@ export function HomePage() {
           {useCases.map((item) => (
             <Card
               key={item.title}
-              className="h-full rounded-2xl border bg-surface-2 transition-colors hover:border-accent/30 hover:bg-surface-3"
+              className="h-full rounded-2xl border bg-card transition-colors hover:border-accent/30 hover:bg-surface-3"
             >
               <CardHeader className="p-6 pb-3">
                 <div
@@ -692,7 +692,7 @@ export function HomePage() {
                 <CardTitle className="type-h3">{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pt-0 pb-6">
-                <p className="text-[16px] leading-[1.6] text-text-soft">
+                <p className="text-[16px] leading-[1.6] text-muted-foreground">
                   {item.text}
                 </p>
               </CardContent>

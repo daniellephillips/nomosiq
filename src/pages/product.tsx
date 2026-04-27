@@ -100,7 +100,7 @@ export function ProductPage() {
                   <CardTitle>{workflow.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[16px] leading-[1.6] text-text-soft">
+                  <p className="text-[16px] leading-[1.6] text-muted-foreground">
                     {workflow.text}
                   </p>
                 </CardContent>

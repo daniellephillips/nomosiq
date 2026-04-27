@@ -46,7 +46,7 @@ function NavItem({
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-text-soft transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
           isActive && "bg-muted text-foreground"
         )
       }
@@ -78,7 +78,7 @@ export function SiteHeader() {
       className={cn(
         "sticky top-0 z-50 border-b bg-background/95 transition-[border-color,backdrop-filter,background-color]",
         isScrolled
-          ? "border-border-subtle backdrop-blur-md"
+          ? "border-border backdrop-blur-md"
           : "border-transparent backdrop-blur-none"
       )}
     >
@@ -157,7 +157,7 @@ export function SiteHeader() {
                     Book Demo
                   </a>
                 </Button>
-                <div className="type-ui grid gap-2 text-text-soft">
+                <div className="type-ui grid gap-2 text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <HugeiconsIcon icon={SecurityCheckIcon} aria-hidden />
                     No external LLM APIs

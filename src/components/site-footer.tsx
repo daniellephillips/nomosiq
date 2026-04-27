@@ -23,13 +23,13 @@ export function SiteFooter() {
                 Nomos AI
               </span>
             </Link>
-            <p className="text-[16px] leading-[1.6] text-text-soft">
+            <p className="text-[16px] leading-[1.6] text-muted-foreground">
               Private AI workflow systems for law firms that need control,
               auditability, and cited answers on sensitive documents.
             </p>
           </div>
           <nav
-            className="type-ui grid gap-3 text-text-soft sm:grid-cols-5 sm:gap-8"
+            className="type-ui grid gap-3 text-muted-foreground sm:grid-cols-5 sm:gap-8"
             aria-label="Footer"
           >
             <Link

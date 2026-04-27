@@ -23,7 +23,7 @@ export function ContactPage() {
             Book Demo
           </a>
         </Button>
-        <p className="type-fine mt-5 text-text-soft">
+        <p className="type-fine mt-5 text-muted-foreground">
           Prefer email?{" "}
           <a
             className="font-medium text-foreground"
@@ -64,7 +64,7 @@ export function ContactPage() {
                 readOnly
               />
             </div>
-            <p className="text-[16px] leading-[1.6] text-text-soft">
+            <p className="text-[16px] leading-[1.6] text-muted-foreground">
               This checklist is informational in v1. Demo requests are handled
               through Calendly.
             </p>
