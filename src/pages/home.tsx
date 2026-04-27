@@ -8,6 +8,7 @@ import {
   TaskDaily01Icon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
+import { Link } from "react-router-dom"
 
 import {
   Accordion,
@@ -590,6 +591,34 @@ function FaqSection() {
   )
 }
 
+function FinalCtaSection() {
+  return (
+    <section className="border-t bg-muted/30">
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-card px-6 py-10 text-center sm:px-10">
+          <h2 className="text-3xl font-semibold tracking-normal">
+            See how Nomos AI fits your legal workflow.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[18px] leading-[1.65] text-text-body">
+            Book a focused walkthrough of document querying, contract review,
+            and citation-backed answers.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Button asChild size="lg">
+              <a href={demoUrl} target="_blank" rel="noreferrer">
+                Book Demo
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/contact">Contact</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export function HomePage() {
   return (
     <>
@@ -685,6 +714,8 @@ export function HomePage() {
       <SecurityAdoptionSection />
 
       <FaqSection />
+
+      <FinalCtaSection />
     </>
   )
 }
