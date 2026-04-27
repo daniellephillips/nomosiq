@@ -9,6 +9,12 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -200,6 +206,39 @@ const securityDetails = [
     title: "Supported systems",
     text: "Designed to connect with document repositories, matter files, and legal workflow tools.",
     className: "border-accent/30 bg-accent/10 text-accent",
+  },
+]
+
+const faqItems = [
+  {
+    question: "Where does processing happen?",
+    answer:
+      "Nomos AI is designed for firm-controlled environments. The implementation model depends on the firm’s infrastructure, data policies, and workflow requirements.",
+  },
+  {
+    question: "How are answers reviewed?",
+    answer:
+      "Answers are source-linked so attorneys can verify the underlying text before acting. The system is intended to support legal review, not replace attorney judgment.",
+  },
+  {
+    question: "What systems does Nomos AI support?",
+    answer:
+      "Nomos AI is designed to work with legal document repositories, matter files, transcripts, contracts, and related workflow systems.",
+  },
+  {
+    question: "Is client data used to train external models?",
+    answer:
+      "No. Nomos AI is positioned for private legal workflows where sensitive client materials are not used to train public or external foundation models.",
+  },
+  {
+    question: "What deployment models are supported?",
+    answer:
+      "Deployment depends on the firm’s security requirements. The product direction supports private, firm-controlled environments rather than public, consumer-style AI workflows.",
+  },
+  {
+    question: "How long does implementation take?",
+    answer:
+      "Implementation timing depends on document sources, access-control requirements, and workflow scope. A focused pilot can start with a narrow document-review workflow.",
   },
 ]
 
@@ -510,6 +549,47 @@ function SecurityAdoptionSection() {
   )
 }
 
+function FaqSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <div className="max-w-[560px]">
+          <Badge
+            className="border-accent/30 bg-accent/10 text-accent"
+            variant="secondary"
+          >
+            FAQ
+          </Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
+            Questions law firms ask before adopting private AI.
+          </h2>
+          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+            Straight answers about deployment, review, data use, and
+            implementation.
+          </p>
+        </div>
+
+        <Accordion
+          type="single"
+          collapsible
+          className="rounded-2xl border bg-card px-4 sm:px-6"
+        >
+          {faqItems.map((item) => (
+            <AccordionItem key={item.question} value={item.question}>
+              <AccordionTrigger className="min-h-14 text-left text-[18px] leading-[1.45] font-medium hover:text-accent">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-[16px] leading-[1.6] text-text-body">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
+  )
+}
+
 export function HomePage() {
   return (
     <>
@@ -603,6 +683,8 @@ export function HomePage() {
       <HowItWorksSection />
 
       <SecurityAdoptionSection />
+
+      <FaqSection />
     </>
   )
 }
