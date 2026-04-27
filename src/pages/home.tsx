@@ -370,7 +370,7 @@ function TrustStrip() {
   return (
     <section
       className="border-b bg-surface-1"
-      aria-label="Nomos AI trust signals"
+      aria-label="Nomos AI trust and deployment highlights"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-surface-2 md:grid-cols-2 xl:grid-cols-4">
