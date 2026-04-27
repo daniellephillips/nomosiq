@@ -158,24 +158,22 @@ const workflowFlow = [
   {
     label: "Document set",
     detail: "Firm-controlled workspace",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    className: "text-success-foreground dark:text-success",
   },
   {
     label: "Query",
     detail: "Targeted legal question",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    className: "text-accent",
   },
   {
     label: "Source-backed answer",
     detail: "Cited response with source text",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    className: "text-accent",
   },
   {
     label: "Attorney review",
     detail: "Human verification before action",
-    className:
-      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+    className: "text-warning-foreground dark:text-warning",
   },
 ]
 
@@ -183,30 +181,27 @@ const securityDetails = [
   {
     title: "Deployment model",
     text: "Firm-controlled environments for sensitive client materials.",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    className: "border-success-border",
   },
   {
     title: "Access control / RBAC",
     text: "Restrict matter access by role, team, or permission model.",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    className: "border-success-border",
   },
   {
     title: "Audit visibility",
     text: "Track document access, source retrieval, answer generation, and review activity.",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    className: "border-accent/30",
   },
   {
     title: "Citation-backed review",
     text: "Every answer links back to source text so attorneys can verify before acting.",
-    className:
-      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+    className: "border-accent/30",
   },
   {
     title: "Supported systems",
     text: "Designed to connect with document repositories, matter files, and legal workflow tools.",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    className: "border-accent/30",
   },
 ]
 
@@ -246,7 +241,7 @@ const faqItems = [
 function HeroProductMockup() {
   return (
     <Card
-      className="w-full max-w-[540px] overflow-hidden rounded-2xl border bg-card lg:col-span-6 lg:mt-3 lg:justify-self-end"
+      className="w-full max-w-[540px] overflow-hidden rounded-2xl border bg-surface-3 lg:col-span-6 lg:mt-3 lg:justify-self-end"
       aria-label="Product mockup showing legal document review with cited AI answer and audit trail."
     >
       <CardContent className="grid gap-5 p-5 sm:p-6">
@@ -261,7 +256,7 @@ function HeroProductMockup() {
         <div className="flex flex-col gap-3 border-b pb-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <p className="type-ui text-foreground">Matter: Lease Review</p>
-            <p className="mt-1 text-[15px] leading-5 text-text-soft">
+            <p className="mt-1 text-[15px] leading-5 text-text-subtle">
               Commercial Lease · 14 pages · Private workspace
             </p>
           </div>
@@ -274,14 +269,14 @@ function HeroProductMockup() {
         </div>
 
         <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-2xl border bg-background p-4">
+          <div className="rounded-2xl border bg-surface-1 p-4">
             <div className="mb-4 flex items-center justify-between gap-3">
               <p className="type-ui text-foreground">Source document</p>
-              <span className="text-[14px] leading-[18px] text-text-soft">
+              <span className="text-[14px] leading-[18px] text-text-subtle">
                 Lease_Agreement.pdf
               </span>
             </div>
-            <div className="space-y-4 rounded-xl border bg-muted/30 p-4">
+            <div className="space-y-4 rounded-xl border bg-surface-2 p-4">
               <div>
                 <p className="type-ui text-foreground">
                   Section 12.2 — Termination for Cause
@@ -302,12 +297,12 @@ function HeroProductMockup() {
           </div>
 
           <div className="grid gap-4">
-            <div className="rounded-2xl border bg-background p-4">
-              <p className="type-ui text-text-soft">Question</p>
+            <div className="rounded-2xl border bg-surface-1 p-4">
+              <p className="type-ui text-text-subtle">Question</p>
               <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
                 What are the termination rights in this lease?
               </p>
-              <div className="mt-4 rounded-xl border bg-muted/30 p-4">
+              <div className="mt-4 rounded-xl border bg-surface-2 p-4">
                 <div className="mb-3 flex flex-wrap items-center gap-2">
                   <Badge
                     className="border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
@@ -347,7 +342,7 @@ function HeroProductMockup() {
           </div>
         </div>
 
-        <div className="rounded-2xl border bg-background p-4">
+        <div className="rounded-2xl border bg-surface-1 p-4">
           <p className="type-ui text-foreground">Audit trail</p>
           <div className="mt-3 grid gap-2 sm:grid-cols-4">
             {auditTrail.map((item) => (
@@ -358,7 +353,7 @@ function HeroProductMockup() {
                   }`}
                   aria-hidden="true"
                 />
-                <span className="text-[14px] leading-[18px] text-text-soft">
+                <span className="text-[14px] leading-[18px] text-text-subtle">
                   {item.label}
                 </span>
               </div>
@@ -373,11 +368,11 @@ function HeroProductMockup() {
 function TrustStrip() {
   return (
     <section
-      className="border-b bg-muted/30"
+      className="border-b bg-surface-1"
       aria-label="Nomos AI trust signals"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-card md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-surface-2 md:grid-cols-2 xl:grid-cols-4">
           {trustItems.map((item, index) => (
             <div
               key={item.title}
@@ -411,7 +406,7 @@ function TrustStrip() {
 
 function HowItWorksSection() {
   return (
-    <section className="border-y bg-muted/30">
+    <section className="border-y bg-surface-1">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div className="max-w-[640px]">
           <Badge
@@ -428,11 +423,11 @@ function HowItWorksSection() {
             ingest matter materials, ask targeted questions, and verify every
             answer against source text before attorneys act.
           </p>
-          <div className="mt-8 grid gap-4">
+          <div className="mt-8 grid gap-5 border-l border-border pl-5">
             {howItWorksSteps.map((step, index) => (
               <div
                 key={step.title}
-                className="grid gap-4 rounded-2xl border bg-card p-5 sm:grid-cols-[auto_1fr]"
+                className="grid gap-4 sm:grid-cols-[auto_1fr]"
               >
                 <div
                   className={`flex size-9 items-center justify-center rounded-full border text-[15px] leading-none font-bold tabular-nums ${step.className}`}
@@ -451,7 +446,7 @@ function HowItWorksSection() {
           </div>
         </div>
 
-        <Card className="self-start rounded-2xl border bg-card">
+        <Card className="self-start rounded-2xl border bg-surface-3">
           <CardContent className="grid gap-4 p-5 sm:p-6">
             <div>
               <Badge
@@ -464,14 +459,14 @@ function HowItWorksSection() {
                 Document set → Query → Source-backed answer → Attorney review
               </p>
             </div>
-            <div className="grid gap-3">
+            <div className="grid gap-0 overflow-hidden rounded-2xl border bg-surface-1">
               {workflowFlow.map((item, index) => (
                 <div
                   key={item.label}
-                  className="grid gap-3 rounded-2xl border bg-background p-4 sm:grid-cols-[auto_1fr]"
+                  className="grid gap-3 border-b p-4 last:border-b-0 sm:grid-cols-[auto_1fr]"
                 >
                   <div
-                    className={`flex size-9 items-center justify-center rounded-full border ${item.className}`}
+                    className={`flex size-9 items-center justify-center rounded-full border bg-surface-2 ${item.className}`}
                     aria-hidden="true"
                   >
                     <span className="text-[15px] leading-none font-bold tabular-nums">
@@ -496,7 +491,7 @@ function HowItWorksSection() {
 
 function SecurityAdoptionSection() {
   return (
-    <section id="security" className="border-y bg-muted/30">
+    <section id="security" className="border-y bg-background">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="max-w-[620px]">
           <Badge
@@ -513,9 +508,11 @@ function SecurityAdoptionSection() {
             source-cited retrieval, access controls, and audit visibility for
             sensitive legal workflows.
           </p>
-          <div className="mt-6 rounded-2xl border border-success-border bg-success-muted p-5 text-success-foreground dark:text-success">
-            <p className="type-ui">Built around firm-controlled review.</p>
-            <p className="mt-2 text-[15px] leading-6">
+          <div className="mt-6 rounded-2xl border border-success-border bg-surface-2 p-5">
+            <p className="type-ui text-success-foreground dark:text-success">
+              Built around firm-controlled review.
+            </p>
+            <p className="mt-2 text-[15px] leading-6 text-text-soft">
               Security controls are presented as part of the legal workflow, not
               as a separate dashboard attorneys have to interpret.
             </p>
@@ -526,15 +523,9 @@ function SecurityAdoptionSection() {
           {securityDetails.map((detail) => (
             <Card
               key={detail.title}
-              className="rounded-2xl border bg-card last:md:col-span-2"
+              className="rounded-2xl border bg-surface-2"
             >
-              <CardContent className="grid gap-4 p-5">
-                <div
-                  className={`flex size-10 items-center justify-center rounded-xl border ${detail.className}`}
-                  aria-hidden="true"
-                >
-                  <span className="size-2 rounded-full bg-current" />
-                </div>
+              <CardContent className={`border-t-2 p-5 ${detail.className}`}>
                 <div>
                   <h3 className="type-ui text-foreground">{detail.title}</h3>
                   <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
@@ -573,7 +564,7 @@ function FaqSection() {
         <Accordion
           type="single"
           collapsible
-          className="rounded-2xl border bg-card px-4 sm:px-6"
+          className="rounded-2xl border bg-surface-3 px-4 sm:px-6"
         >
           {faqItems.map((item) => (
             <AccordionItem key={item.question} value={item.question}>
@@ -593,9 +584,9 @@ function FaqSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="border-t bg-muted/30">
+    <section className="border-t bg-surface-1">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-card px-6 py-10 text-center sm:px-10">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-surface-3 px-6 py-10 text-center sm:px-10">
           <h2 className="text-3xl font-semibold tracking-normal">
             See how Nomos AI fits your legal workflow.
           </h2>
@@ -622,7 +613,7 @@ function FinalCtaSection() {
 export function HomePage() {
   return (
     <>
-      <section className="border-b bg-muted/30">
+      <section className="border-b bg-surface-1">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:pt-24 lg:pb-[88px]">
           <div className="max-w-[560px] lg:col-span-6">
             <Badge
@@ -688,7 +679,7 @@ export function HomePage() {
           {useCases.map((item) => (
             <Card
               key={item.title}
-              className="h-full rounded-2xl border bg-card transition-colors hover:border-accent/30 hover:bg-muted/40"
+              className="h-full rounded-2xl border bg-surface-2 transition-colors hover:border-accent/30 hover:bg-surface-3"
             >
               <CardHeader className="p-6 pb-3">
                 <div
