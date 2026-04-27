@@ -9,12 +9,6 @@ import {
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -175,6 +169,37 @@ const workflowFlow = [
     detail: "Human verification before action",
     className:
       "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+  },
+]
+
+const securityDetails = [
+  {
+    title: "Deployment model",
+    text: "Firm-controlled environments for sensitive client materials.",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    title: "Access control / RBAC",
+    text: "Restrict matter access by role, team, or permission model.",
+    className:
+      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+  },
+  {
+    title: "Audit visibility",
+    text: "Track document access, source retrieval, answer generation, and review activity.",
+    className: "border-accent/30 bg-accent/10 text-accent",
+  },
+  {
+    title: "Citation-backed review",
+    text: "Every answer links back to source text so attorneys can verify before acting.",
+    className:
+      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+  },
+  {
+    title: "Supported systems",
+    text: "Designed to connect with document repositories, matter files, and legal workflow tools.",
+    className: "border-accent/30 bg-accent/10 text-accent",
   },
 ]
 
@@ -370,7 +395,7 @@ function HowItWorksSection() {
                 className="grid gap-4 rounded-2xl border bg-card p-5 sm:grid-cols-[auto_1fr]"
               >
                 <div
-                  className={`flex size-10 items-center justify-center rounded-xl border text-[15px] leading-5 font-semibold ${step.className}`}
+                  className={`flex size-9 items-center justify-center rounded-full border text-[15px] leading-none font-bold tabular-nums ${step.className}`}
                   aria-hidden="true"
                 >
                   {index + 1}
@@ -406,10 +431,10 @@ function HowItWorksSection() {
                   className="grid gap-3 rounded-2xl border bg-background p-4 sm:grid-cols-[auto_1fr]"
                 >
                   <div
-                    className={`flex size-10 items-center justify-center rounded-xl border ${item.className}`}
+                    className={`flex size-9 items-center justify-center rounded-full border ${item.className}`}
                     aria-hidden="true"
                   >
-                    <span className="text-[14px] leading-[18px] font-semibold">
+                    <span className="text-[15px] leading-none font-bold tabular-nums">
                       {index + 1}
                     </span>
                   </div>
@@ -424,6 +449,62 @@ function HowItWorksSection() {
             </div>
           </CardContent>
         </Card>
+      </div>
+    </section>
+  )
+}
+
+function SecurityAdoptionSection() {
+  return (
+    <section id="security" className="border-y bg-muted/30">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div className="max-w-[620px]">
+          <Badge
+            className="border-success-border bg-success-muted text-success-foreground dark:text-success"
+            variant="secondary"
+          >
+            Security-led adoption
+          </Badge>
+          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
+            Private AI for matters that cannot leave firm control.
+          </h2>
+          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+            Nomos AI sits inside the firm&apos;s environment and supports
+            source-cited retrieval, access controls, and audit visibility for
+            sensitive legal workflows.
+          </p>
+          <div className="mt-6 rounded-2xl border border-success-border bg-success-muted p-5 text-success-foreground dark:text-success">
+            <p className="type-ui">Built around firm-controlled review.</p>
+            <p className="mt-2 text-[15px] leading-6">
+              Security controls are presented as part of the legal workflow, not
+              as a separate dashboard attorneys have to interpret.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {securityDetails.map((detail) => (
+            <Card
+              key={detail.title}
+              className="rounded-2xl border bg-card last:md:col-span-2"
+            >
+              <CardContent className="grid gap-4 p-5">
+                <div
+                  className={`flex size-10 items-center justify-center rounded-xl border ${detail.className}`}
+                  aria-hidden="true"
+                >
+                  <span className="size-2 rounded-full bg-current" />
+                </div>
+                <div>
+                  <h3 className="type-ui text-foreground">{detail.title}</h3>
+                  <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
+                    {detail.text}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -521,49 +602,7 @@ export function HomePage() {
 
       <HowItWorksSection />
 
-      <section id="security" className="border-y bg-muted/30">
-        <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div>
-            <Badge variant="secondary">Security-led adoption</Badge>
-            <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-              Private AI for legal teams that need control.
-            </h2>
-            <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-              Nomos AI is built for firms that cannot use public AI tools on
-              client documents. It provides a private AI layer inside your
-              environment with source-cited retrieval, access controls, and
-              audit visibility.
-            </p>
-          </div>
-          <Accordion
-            type="single"
-            collapsible
-            className="rounded-lg border bg-background px-4"
-          >
-            <AccordionItem value="private">
-              <AccordionTrigger>Where does processing happen?</AccordionTrigger>
-              <AccordionContent>
-                Processing is planned for the firm&apos;s controlled
-                environment, such as private cloud or on-prem infrastructure.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="citations">
-              <AccordionTrigger>How are answers reviewed?</AccordionTrigger>
-              <AccordionContent>
-                Outputs are source-cited so attorneys can inspect the underlying
-                document evidence instead of relying on black-box responses.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="systems">
-              <AccordionTrigger>What systems does it support?</AccordionTrigger>
-              <AccordionContent>
-                The marketing brief targets workflows around tools such as Clio,
-                NetDocuments, Outlook, and SharePoint integrations.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
+      <SecurityAdoptionSection />
     </>
   )
 }
