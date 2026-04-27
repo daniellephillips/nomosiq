@@ -51,7 +51,6 @@
     --warning-border: oklch(0.84 0.09 82);
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.90 0.01 220);
-    --border-subtle: oklch(0.90 0.01 220);
     --input: oklch(0.92 0.008 220);
     --ring: oklch(0.68 0.08 223);
     --chart-1: oklch(0.897 0.196 126.665);
@@ -113,7 +112,6 @@
     --warning-border: oklch(0.55 0.11 82);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 12%);
-    --border-subtle: oklch(1 0 0 / 12%);
     --input: oklch(1 0 0 / 16%);
     --ring: oklch(0.68 0.08 223);
     --chart-1: oklch(0.897 0.196 126.665);
@@ -127,7 +125,7 @@
     --sidebar-primary-foreground: oklch(0.302 0.056 229.695);
     --sidebar-accent: var(--muted);
     --sidebar-accent-foreground: var(--foreground);
-    --sidebar-border: var(--border-subtle);
+    --sidebar-border: var(--border);
     --sidebar-ring: var(--ring);
 }
 
@@ -178,7 +176,6 @@
     --color-text-body: var(--text-body);
     --color-text-soft: var(--text-soft);
     --color-text-subtle: var(--text-subtle);
-    --color-border-subtle: var(--border-subtle);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
     --radius-sm: calc(var(--radius) * 0.6);
@@ -297,7 +294,7 @@
   }
 
   .panel-surface {
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--border);
     border-radius: var(--radius-panel);
     background: var(--card);
   }

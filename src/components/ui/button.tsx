@@ -12,9 +12,9 @@ const buttonVariants = cva(
         default:
           "bg-primary text-[16px] leading-5 font-semibold text-primary-foreground hover:bg-primary/85",
         outline:
-          "border-border-subtle bg-transparent text-[15px] leading-5 text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
+          "border-border bg-transparent text-[15px] leading-5 text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         secondary:
-          "border border-border-subtle bg-secondary text-[15px] leading-5 text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "border border-border bg-secondary text-[15px] leading-5 text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
           "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
         destructive:
