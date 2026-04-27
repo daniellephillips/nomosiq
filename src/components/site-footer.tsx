@@ -15,7 +15,8 @@ export function SiteFooter() {
             >
               <img
                 src={gazelleLogo}
-                alt="Nomos AI gazelle mark"
+                alt=""
+                aria-hidden="true"
                 className="h-11 w-auto object-contain brightness-0 dark:invert"
               />
               <span className="font-heading text-[20px] leading-5 font-semibold text-foreground">

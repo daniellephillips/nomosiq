@@ -392,7 +392,7 @@ function TrustStrip() {
                 <HugeiconsIcon icon={item.icon} className="size-5" />
               </div>
               <div>
-                <h2 className="type-ui text-foreground">{item.title}</h2>
+                <p className="type-ui text-foreground">{item.title}</p>
                 <p className="mt-1 text-[14px] leading-[18px] text-text-soft">
                   {item.text}
                 </p>

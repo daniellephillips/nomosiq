@@ -90,7 +90,8 @@ export function SiteHeader() {
         >
           <img
             src={gazelleLogo}
-            alt="Nomos AI gazelle mark"
+            alt=""
+            aria-hidden="true"
             className="h-9 w-auto object-contain brightness-0 md:h-11 dark:invert"
           />
           <span className="font-heading text-[19px] leading-5 font-semibold tracking-normal text-foreground">
@@ -130,7 +131,8 @@ export function SiteHeader() {
               <div className="mb-8 flex items-center gap-3">
                 <img
                   src={gazelleLogo}
-                  alt="Nomos AI gazelle mark"
+                  alt=""
+                  aria-hidden="true"
                   className="h-9 w-auto object-contain brightness-0 dark:invert"
                 />
                 <span className="font-heading text-[18px] leading-5 font-semibold">
