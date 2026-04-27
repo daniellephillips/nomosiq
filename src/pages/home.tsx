@@ -241,7 +241,8 @@ const faqItems = [
 function HeroProductMockup() {
   return (
     <Card
-      className="w-full max-w-[540px] overflow-hidden rounded-2xl border bg-surface-3 lg:col-span-6 lg:mt-3 lg:justify-self-end"
+      role="img"
+      className="w-full max-w-[540px] min-w-0 overflow-hidden rounded-2xl border bg-surface-3 lg:col-span-6 lg:mt-3 lg:justify-self-end"
       aria-label="Product mockup showing legal document review with cited AI answer and audit trail."
     >
       <CardContent className="grid gap-5 p-5 sm:p-6">
@@ -268,11 +269,11 @@ function HeroProductMockup() {
           </Badge>
         </div>
 
-        <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-          <div className="rounded-2xl border bg-surface-1 p-4">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+          <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
             <div className="mb-4 flex items-center justify-between gap-3">
               <p className="type-ui text-foreground">Source document</p>
-              <span className="text-[14px] leading-[18px] text-text-subtle">
+              <span className="min-w-0 text-[14px] leading-[18px] break-words text-text-subtle">
                 Lease_Agreement.pdf
               </span>
             </div>
@@ -296,8 +297,8 @@ function HeroProductMockup() {
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <div className="rounded-2xl border bg-surface-1 p-4">
+          <div className="grid min-w-0 gap-4">
+            <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
               <p className="type-ui text-text-subtle">Question</p>
               <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
                 What are the termination rights in this lease?
@@ -407,7 +408,7 @@ function TrustStrip() {
 function HowItWorksSection() {
   return (
     <section className="border-y bg-surface-1">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div className="max-w-[640px]">
           <Badge
             className="border-accent/30 bg-accent/10 text-accent"
@@ -446,7 +447,7 @@ function HowItWorksSection() {
           </div>
         </div>
 
-        <Card className="self-start rounded-2xl border bg-surface-3">
+        <Card className="min-w-0 self-start rounded-2xl border bg-surface-3">
           <CardContent className="grid gap-4 p-5 sm:p-6">
             <div>
               <Badge
@@ -455,7 +456,7 @@ function HowItWorksSection() {
               >
                 Private workflow
               </Badge>
-              <p className="mt-4 text-[18px] leading-[1.5] font-medium text-foreground">
+              <p className="mt-4 text-[18px] leading-[1.5] font-medium break-words text-foreground">
                 Document set → Query → Source-backed answer → Attorney review
               </p>
             </div>
@@ -492,7 +493,7 @@ function HowItWorksSection() {
 function SecurityAdoptionSection() {
   return (
     <section id="security" className="border-y bg-background">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="max-w-[620px]">
           <Badge
             className="border-success-border bg-success-muted text-success-foreground dark:text-success"
@@ -544,7 +545,7 @@ function SecurityAdoptionSection() {
 function FaqSection() {
   return (
     <section className="bg-background">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
         <div className="max-w-[560px]">
           <Badge
             className="border-accent/30 bg-accent/10 text-accent"

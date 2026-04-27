@@ -46,7 +46,7 @@ function NavItem({
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-text-soft transition-colors hover:text-foreground",
+          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-text-soft transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
           isActive && "bg-muted text-foreground"
         )
       }
@@ -58,6 +58,7 @@ function NavItem({
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,7 +119,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" aria-label="Open menu">
                 <HugeiconsIcon icon={Menu01Icon} aria-hidden="true" />
@@ -141,7 +142,11 @@ export function SiteHeader() {
               </div>
               <nav className="grid gap-2" aria-label="Mobile primary">
                 {navItems.map((item) => (
-                  <NavItem key={item.href} {...item} />
+                  <NavItem
+                    key={item.href}
+                    {...item}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  />
                 ))}
               </nav>
               <div className="mt-8 grid gap-3">

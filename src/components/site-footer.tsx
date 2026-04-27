@@ -9,7 +9,10 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div className="max-w-sm">
-            <Link to="/" className="mb-4 flex items-center gap-3">
+            <Link
+              to="/"
+              className="mb-4 flex w-fit items-center gap-3 rounded-md focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+            >
               <img
                 src={gazelleLogo}
                 alt="Nomos AI gazelle mark"
@@ -28,13 +31,22 @@ export function SiteFooter() {
             className="type-ui grid gap-3 text-text-soft sm:grid-cols-5 sm:gap-8"
             aria-label="Footer"
           >
-            <Link to="/product" className="hover:text-foreground">
+            <Link
+              to="/product"
+              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+            >
               Product
             </Link>
-            <Link to="/security" className="hover:text-foreground">
+            <Link
+              to="/security"
+              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+            >
               Security
             </Link>
-            <Link to="/contact" className="hover:text-foreground">
+            <Link
+              to="/contact"
+              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+            >
               Contact
             </Link>
             <span aria-disabled="true" className="cursor-default">
@@ -46,9 +58,12 @@ export function SiteFooter() {
           </nav>
         </div>
         <Separator />
-        <div className="type-fine flex flex-col justify-between gap-3 text-text-soft sm:flex-row">
+        <div className="type-fine flex flex-col justify-between gap-3 text-text-subtle sm:flex-row">
           <p>© 2026 Nomos AI, LLC. All rights reserved.</p>
-          <a href="mailto:hello@nomosiq.ai" className="hover:text-foreground">
+          <a
+            href="mailto:hello@nomosiq.ai"
+            className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+          >
             hello@nomosiq.ai
           </a>
         </div>
