@@ -393,7 +393,7 @@ function TrustStrip() {
               </div>
               <div>
                 <p className="type-ui text-foreground">{item.title}</p>
-                <p className="mt-1 text-[14px] leading-[18px] text-text-soft">
+                <p className="mt-1 text-[14px] leading-[18px] text-muted-foreground">
                   {item.text}
                 </p>
               </div>
@@ -438,7 +438,7 @@ function HowItWorksSection() {
                 </div>
                 <div>
                   <h3 className="type-ui text-foreground">{step.title}</h3>
-                  <p className="mt-1 text-[16px] leading-[1.6] text-text-soft">
+                  <p className="mt-1 text-[16px] leading-[1.6] text-muted-foreground">
                     {step.text}
                   </p>
                 </div>
@@ -476,7 +476,7 @@ function HowItWorksSection() {
                   </div>
                   <div>
                     <p className="type-ui text-foreground">{item.label}</p>
-                    <p className="mt-1 text-[15px] leading-5 text-text-soft">
+                    <p className="mt-1 text-[15px] leading-5 text-muted-foreground">
                       {item.detail}
                     </p>
                   </div>
@@ -513,7 +513,7 @@ function SecurityAdoptionSection() {
             <p className="type-ui text-success-foreground dark:text-success">
               Built around firm-controlled review.
             </p>
-            <p className="mt-2 text-[15px] leading-6 text-text-soft">
+            <p className="mt-2 text-[15px] leading-6 text-muted-foreground">
               Security controls are presented as part of the legal workflow, not
               as a separate dashboard attorneys have to interpret.
             </p>
@@ -529,7 +529,7 @@ function SecurityAdoptionSection() {
               <CardContent className={`border-t-2 p-5 ${detail.className}`}>
                 <div>
                   <h3 className="type-ui text-foreground">{detail.title}</h3>
-                  <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
+                  <p className="mt-2 text-[16px] leading-[1.6] text-muted-foreground">
                     {detail.text}
                   </p>
                 </div>
@@ -692,7 +692,7 @@ export function HomePage() {
                 <CardTitle className="type-h3">{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pt-0 pb-6">
-                <p className="text-[16px] leading-[1.6] text-text-soft">
+                <p className="text-[16px] leading-[1.6] text-muted-foreground">
                   {item.text}
                 </p>
               </CardContent>

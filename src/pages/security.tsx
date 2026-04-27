@@ -58,7 +58,7 @@ export function SecurityPage() {
                 <CardTitle>{control.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-[16px] leading-[1.6] text-text-soft">
+                <p className="text-[16px] leading-[1.6] text-muted-foreground">
                   {control.text}
                 </p>
               </CardContent>
