@@ -1,0 +1,159 @@
+./src/pages/security.tsx:40:          <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
+./src/pages/security.tsx:61:                <p className="text-[16px] leading-[1.6] text-text-soft">
+./src/pages/security.tsx:77:            <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/contact.tsx:17:        <p className="mt-5 text-[18px] leading-[1.65] text-text-body">
+./src/pages/contact.tsx:26:        <p className="type-fine mt-5 text-text-soft">
+./src/pages/contact.tsx:67:            <p className="text-[16px] leading-[1.6] text-text-soft">
+./src/pages/home.tsx:28:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:37:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:42:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:54:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:59:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:64:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:69:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:86:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:105:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:121:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:142:      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+./src/pages/home.tsx:153:      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
+./src/pages/home.tsx:184:    className: "border-success-border",
+./src/pages/home.tsx:189:    className: "border-success-border",
+./src/pages/home.tsx:245:      className="w-full max-w-[540px] min-w-0 overflow-hidden rounded-2xl border bg-surface-3 lg:col-span-6 lg:mt-3 lg:justify-self-end"
+./src/pages/home.tsx:260:            <p className="mt-1 text-[15px] leading-5 text-text-subtle">
+./src/pages/home.tsx:265:            className="w-fit border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
+./src/pages/home.tsx:273:          <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
+./src/pages/home.tsx:276:              <span className="min-w-0 text-[14px] leading-[18px] break-words text-text-subtle">
+./src/pages/home.tsx:280:            <div className="space-y-4 rounded-xl border bg-surface-2 p-4">
+./src/pages/home.tsx:285:                <p className="mt-3 text-[15px] leading-6 text-text-body">
+./src/pages/home.tsx:292:                <p className="text-[15px] leading-6 text-text-body">
+./src/pages/home.tsx:301:            <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
+./src/pages/home.tsx:302:              <p className="type-ui text-text-subtle">Question</p>
+./src/pages/home.tsx:303:              <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
+./src/pages/home.tsx:306:              <div className="mt-4 rounded-xl border bg-surface-2 p-4">
+./src/pages/home.tsx:309:                    className="border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
+./src/pages/home.tsx:318:                <p className="text-[16px] leading-[1.6] text-text-body">
+./src/pages/home.tsx:346:        <div className="rounded-2xl border bg-surface-1 p-4">
+./src/pages/home.tsx:357:                <span className="text-[14px] leading-[18px] text-text-subtle">
+./src/pages/home.tsx:372:      className="border-b bg-surface-1"
+./src/pages/home.tsx:376:        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-surface-2 md:grid-cols-2 xl:grid-cols-4">
+./src/pages/home.tsx:396:                <p className="mt-1 text-[14px] leading-[18px] text-text-soft">
+./src/pages/home.tsx:410:    <section className="border-y bg-surface-1">
+./src/pages/home.tsx:422:          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/home.tsx:441:                  <p className="mt-1 text-[16px] leading-[1.6] text-text-soft">
+./src/pages/home.tsx:450:        <Card className="min-w-0 self-start rounded-2xl border bg-surface-3">
+./src/pages/home.tsx:454:                className="border-success-border bg-success-muted text-success-foreground dark:text-success"
+./src/pages/home.tsx:463:            <div className="grid gap-0 overflow-hidden rounded-2xl border bg-surface-1">
+./src/pages/home.tsx:470:                    className={`flex size-9 items-center justify-center rounded-full border bg-surface-2 ${item.className}`}
+./src/pages/home.tsx:479:                    <p className="mt-1 text-[15px] leading-5 text-text-soft">
+./src/pages/home.tsx:499:            className="border-success-border bg-success-muted text-success-foreground dark:text-success"
+./src/pages/home.tsx:507:          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/home.tsx:512:          <div className="mt-6 rounded-2xl border border-success-border bg-surface-2 p-5">
+./src/pages/home.tsx:516:            <p className="mt-2 text-[15px] leading-6 text-text-soft">
+./src/pages/home.tsx:527:              className="rounded-2xl border bg-surface-2"
+./src/pages/home.tsx:532:                  <p className="mt-2 text-[16px] leading-[1.6] text-text-soft">
+./src/pages/home.tsx:559:          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/home.tsx:568:          className="rounded-2xl border bg-surface-3 px-4 sm:px-6"
+./src/pages/home.tsx:575:              <AccordionContent className="text-[16px] leading-[1.6] text-text-body">
+./src/pages/home.tsx:588:    <section className="border-t bg-surface-1">
+./src/pages/home.tsx:590:        <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-surface-3 px-6 py-10 text-center sm:px-10">
+./src/pages/home.tsx:594:          <p className="mx-auto mt-4 max-w-2xl text-[18px] leading-[1.65] text-text-body">
+./src/pages/home.tsx:617:      <section className="border-b bg-surface-1">
+./src/pages/home.tsx:629:            <p className="mt-6 max-w-[620px] text-[20px] leading-[1.6] text-text-body">
+./src/pages/home.tsx:673:          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/home.tsx:683:              className="h-full rounded-2xl border bg-surface-2 transition-colors hover:border-accent/30 hover:bg-surface-3"
+./src/pages/home.tsx:695:                <p className="text-[16px] leading-[1.6] text-text-soft">
+./src/pages/product.tsx:45:          <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
+./src/pages/product.tsx:69:          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
+./src/pages/product.tsx:103:                  <p className="text-[16px] leading-[1.6] text-text-soft">
+./src/components/site-footer.tsx:26:            <p className="text-[16px] leading-[1.6] text-text-soft">
+./src/components/site-footer.tsx:32:            className="type-ui grid gap-3 text-text-soft sm:grid-cols-5 sm:gap-8"
+./src/components/site-footer.tsx:62:        <div className="type-fine flex flex-col justify-between gap-3 text-text-subtle sm:flex-row">
+./src/components/site-header.tsx:49:          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-text-soft transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+./src/components/site-header.tsx:81:          ? "border-border-subtle backdrop-blur-md"
+./src/components/site-header.tsx:160:                <div className="type-ui grid gap-2 text-text-soft">
+./src/components/ui/button.tsx:15:          "border-border-subtle bg-transparent text-[15px] leading-5 text-foreground hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
+./src/components/ui/button.tsx:17:          "border border-border-subtle bg-secondary text-[15px] leading-5 text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+./src/components/ui/card.tsx:15:        "group/card flex flex-col gap-6 overflow-hidden rounded-2xl border border-border-subtle bg-card py-6 text-card-foreground has-[>img:first-child]:pt-0 data-[size=sm]:gap-4 data-[size=sm]:py-4 *:[img:first-child]:rounded-t-2xl *:[img:last-child]:rounded-b-2xl",
+./src/components/ui/card.tsx:53:      className={cn("type-body-small text-text-soft", className)}
+./src/components/ui/accordion.tsx:47:          "group/accordion-trigger type-body-small relative flex flex-1 items-start justify-between gap-6 border border-transparent p-4 text-left font-medium text-foreground transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-text-soft",
+./src/components/ui/accordion.tsx:78:      className="type-body-small overflow-hidden px-4 text-text-soft data-open:animate-accordion-down data-closed:animate-accordion-up"
+./src/index.css:22:    --radius-card: 1rem;
+./src/index.css:23:    --radius-panel: 1rem;
+./src/index.css:24:    --radius-button: 9999px;
+./src/index.css:27:    --text-body: oklch(0.30 0.01 230);
+./src/index.css:28:    --text-soft: oklch(0.52 0.025 220);
+./src/index.css:29:    --text-subtle: oklch(0.60 0.02 220);
+./src/index.css:30:    --body: var(--text-body);
+./src/index.css:31:    --body-secondary: var(--text-soft);
+./src/index.css:32:    --surface-1: oklch(0.972 0.006 220);
+./src/index.css:33:    --surface-2: oklch(0.995 0.003 220);
+./src/index.css:34:    --surface-3: oklch(0.985 0.005 220);
+./src/index.css:49:    --success-muted: oklch(0.94 0.025 150);
+./src/index.css:50:    --success-border: oklch(0.82 0.07 150);
+./src/index.css:53:    --warning-muted: oklch(0.95 0.04 82);
+./src/index.css:54:    --warning-border: oklch(0.84 0.09 82);
+./src/index.css:57:    --border-subtle: oklch(0.90 0.01 220);
+./src/index.css:60:    --chart-1: oklch(0.897 0.196 126.665);
+./src/index.css:61:    --chart-2: oklch(0.768 0.233 130.85);
+./src/index.css:62:    --chart-3: oklch(0.648 0.2 131.684);
+./src/index.css:63:    --chart-4: oklch(0.532 0.157 131.589);
+./src/index.css:64:    --chart-5: oklch(0.453 0.124 130.933);
+./src/index.css:67:    --sidebar-foreground: oklch(0.148 0.004 228.8);
+./src/index.css:68:    --sidebar-primary: oklch(0.609 0.126 221.723);
+./src/index.css:69:    --sidebar-primary-foreground: oklch(0.984 0.019 200.873);
+./src/index.css:70:    --sidebar-accent: oklch(0.963 0.002 197.1);
+./src/index.css:71:    --sidebar-accent-foreground: oklch(0.218 0.008 223.9);
+./src/index.css:72:    --sidebar-border: oklch(0.925 0.005 214.3);
+./src/index.css:73:    --sidebar-ring: oklch(0.723 0.014 214.4);
+./src/index.css:90:    --text-body: oklch(0.86 0.012 220);
+./src/index.css:91:    --text-soft: oklch(0.74 0.018 220);
+./src/index.css:92:    --text-subtle: oklch(0.62 0.018 220);
+./src/index.css:93:    --body: var(--text-body);
+./src/index.css:94:    --body-secondary: var(--text-soft);
+./src/index.css:95:    --surface-1: oklch(0.175 0.016 235);
+./src/index.css:96:    --surface-2: oklch(0.205 0.018 235);
+./src/index.css:97:    --surface-3: oklch(0.235 0.02 235);
+./src/index.css:112:    --success-muted: oklch(0.22 0.04 150);
+./src/index.css:113:    --success-border: oklch(0.50 0.10 150);
+./src/index.css:116:    --warning-muted: oklch(0.24 0.045 82);
+./src/index.css:117:    --warning-border: oklch(0.55 0.11 82);
+./src/index.css:120:    --border-subtle: oklch(1 0 0 / 12%);
+./src/index.css:123:    --chart-1: oklch(0.897 0.196 126.665);
+./src/index.css:124:    --chart-2: oklch(0.768 0.233 130.85);
+./src/index.css:125:    --chart-3: oklch(0.648 0.2 131.684);
+./src/index.css:126:    --chart-4: oklch(0.532 0.157 131.589);
+./src/index.css:127:    --chart-5: oklch(0.453 0.124 130.933);
+./src/index.css:129:    --sidebar-foreground: var(--foreground);
+./src/index.css:130:    --sidebar-primary: oklch(0.715 0.143 215.221);
+./src/index.css:131:    --sidebar-primary-foreground: oklch(0.302 0.056 229.695);
+./src/index.css:132:    --sidebar-accent: var(--muted);
+./src/index.css:133:    --sidebar-accent-foreground: var(--foreground);
+./src/index.css:134:    --sidebar-border: var(--border-subtle);
+./src/index.css:135:    --sidebar-ring: var(--ring);
+./src/index.css:141:    --color-sidebar-ring: var(--sidebar-ring);
+./src/index.css:142:    --color-sidebar-border: var(--sidebar-border);
+./src/index.css:143:    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+./src/index.css:144:    --color-sidebar-accent: var(--sidebar-accent);
+./src/index.css:145:    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+./src/index.css:146:    --color-sidebar-primary: var(--sidebar-primary);
+./src/index.css:147:    --color-sidebar-foreground: var(--sidebar-foreground);
+./src/index.css:149:    --color-chart-5: var(--chart-5);
+./src/index.css:150:    --color-chart-4: var(--chart-4);
+./src/index.css:151:    --color-chart-3: var(--chart-3);
+./src/index.css:152:    --color-chart-2: var(--chart-2);
+./src/index.css:153:    --color-chart-1: var(--chart-1);
+./src/index.css:162:    --color-success-muted: var(--success-muted);
+./src/index.css:163:    --color-success-border: var(--success-border);
+./src/index.css:166:    --color-warning-muted: var(--warning-muted);
+./src/index.css:167:    --color-warning-border: var(--warning-border);
+./src/index.css:179:    --color-body-secondary: var(--body-secondary);
+./src/index.css:180:    --color-surface-1: var(--surface-1);
+./src/index.css:181:    --color-surface-2: var(--surface-2);
+./src/index.css:182:    --color-surface-3: var(--surface-3);
+./src/index.css:183:    --color-text-body: var(--text-body);
+./src/index.css:184:    --color-text-soft: var(--text-soft);
+./src/index.css:185:    --color-text-subtle: var(--text-subtle);
+./src/index.css:186:    --color-border-subtle: var(--border-subtle);
+./src/index.css:203:    @apply bg-background text-body antialiased;
+./src/index.css:305:    border: 1px solid var(--border-subtle);
+./src/index.css:306:    border-radius: var(--radius-panel);
