@@ -35,12 +35,10 @@ function NavItem({
   href,
   label,
   onClick,
-  tone = "light",
 }: {
   href: string
   label: string
   onClick?: () => void
-  tone?: "light" | "dark"
 }) {
   return (
     <NavLink
@@ -49,13 +47,9 @@ function NavItem({
       className={({ isActive }) =>
         cn(
           "type-ui flex min-h-11 items-center rounded-md px-3 py-2 transition-colors focus-visible:ring-[3px] focus-visible:outline-none",
-          tone === "dark"
-            ? "text-white/70 hover:text-white focus-visible:ring-white/35"
-            : "text-muted-foreground hover:text-foreground focus-visible:ring-ring/50",
+          "text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 dark:text-white/70 dark:hover:text-white dark:focus-visible:ring-white/35",
           isActive &&
-            (tone === "dark"
-              ? "bg-white/10 text-white"
-              : "bg-muted text-foreground")
+            "bg-muted text-foreground dark:bg-white/10 dark:text-white"
         )
       }
     >
@@ -84,10 +78,10 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-[#0d1b3e] transition-[border-color,backdrop-filter,background-color]",
+        "sticky top-0 z-50 border-b bg-background/95 transition-[border-color,backdrop-filter,background-color] dark:bg-[var(--surface-brand)]",
         isScrolled
-          ? "border-white/10 backdrop-blur-md"
-          : "border-white/10 backdrop-blur-none"
+          ? "border-border backdrop-blur-md dark:border-white/10"
+          : "border-transparent backdrop-blur-none dark:border-white/10"
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1140px] items-center justify-between px-5 md:px-8 lg:px-12">
@@ -100,9 +94,9 @@ export function SiteHeader() {
             src={gazelleLogo}
             alt=""
             aria-hidden="true"
-            className="h-9 w-auto object-contain md:h-[38px]"
+            className="h-9 w-auto object-contain brightness-0 md:h-[38px] dark:brightness-100"
           />
-          <span className="font-heading text-[16px] leading-5 font-bold tracking-normal text-white">
+          <span className="font-heading text-[16px] leading-5 font-bold tracking-normal text-foreground dark:text-white">
             Nomos AI
           </span>
         </Link>
@@ -113,14 +107,18 @@ export function SiteHeader() {
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink asChild>
-                    <NavItem href={item.href} label={item.label} tone="dark" />
+                    <NavItem href={item.href} label={item.label} />
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <ThemeToggle className="border-white/25 text-white hover:bg-white/10 hover:text-white dark:border-white/25 dark:text-white dark:hover:bg-white/10 dark:hover:text-white" />
-          <Button asChild size="lg" className="h-10 rounded-lg px-5">
+          <ThemeToggle className="dark:border-white/25 dark:text-white dark:hover:bg-white/10 dark:hover:text-white" />
+          <Button
+            asChild
+            size="lg"
+            className="h-10 rounded-lg px-5 dark:bg-[var(--surface-brand-cta)] dark:hover:bg-[var(--surface-brand-cta-hover)]"
+          >
             <a href={demoUrl} target="_blank" rel="noreferrer">
               Book Demo
             </a>
@@ -133,7 +131,7 @@ export function SiteHeader() {
               <Button
                 variant="outline"
                 size="icon"
-                className="border-white/25 text-white hover:bg-white/10 hover:text-white"
+                className="dark:border-white/25 dark:text-white dark:hover:bg-white/10 dark:hover:text-white"
                 aria-label="Open menu"
               >
                 <HugeiconsIcon icon={Menu01Icon} aria-hidden="true" />

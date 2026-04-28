@@ -20,6 +20,9 @@
   --gap-cta: 12px;
   --container-x-mobile: 20px;
   --radius-panel: 1rem;
+  --surface-brand: #2282a9;
+  --surface-brand-cta: #024154;
+  --surface-brand-cta-hover: #024154;
   --background: #ffffff;
   --foreground: #0d1b3e;
   --text-body: #0d1b3e;
