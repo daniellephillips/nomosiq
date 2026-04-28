@@ -168,7 +168,7 @@ const outcomes = [
     icon: PencilEdit01Icon,
     title: "Produce first-pass legal work faster",
     items: [
-      "Draft memos, summaries, and letters",
+      "Draft memos, summaries and letters",
       "Generate outlines and talking points",
       "Maintain your firm's voice",
     ],
@@ -498,50 +498,72 @@ function BillableTimeSection() {
 }
 
 function OutcomesSection() {
+  const topRowOutcomes = outcomes.slice(0, 2)
+  const bottomRowOutcomes = outcomes.slice(2)
+
   return (
     <section className="bg-background py-[72px] md:py-24 lg:py-32">
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
         <SectionHeader title="Built around the outcomes attorneys actually need" />
-        <div className="grid gap-6 md:grid-cols-2 md:gap-7 xl:grid-cols-5 xl:gap-8">
-          {outcomes.map((outcome) => (
-            <Card
-              key={outcome.title}
-              className="h-full rounded-[14px] border bg-card"
-            >
-              <CardHeader className="p-8 pb-5">
-                <div
-                  className="mb-5 flex size-11 items-center justify-center rounded-[10px] bg-primary/10 text-primary"
-                  aria-hidden="true"
-                >
-                  <HugeiconsIcon icon={outcome.icon} className="size-5" />
-                </div>
-                <CardTitle className="text-[18px] leading-[1.3] font-semibold">
-                  {outcome.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex grow flex-col px-8 pt-0 pb-8">
-                <ul className="flex flex-1 flex-col gap-3">
-                  {outcome.items.map((item) => (
-                    <li
-                      key={item}
-                      className="relative pl-5 text-[16px] leading-[1.55] text-muted-foreground before:absolute before:top-[0.7em] before:left-0 before:size-1.5 before:rounded-full before:border before:border-primary before:bg-primary/10"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 border-t pt-5 text-[16px] leading-[1.45] font-semibold text-primary">
-                  <p className="mb-1 text-[16px] leading-[1.35] font-medium tracking-[0.07em] text-text-subtle uppercase">
-                    Result
-                  </p>
-                  {outcome.result}
-                </div>
-              </CardContent>
-            </Card>
+        <div className="grid gap-5 md:grid-cols-2">
+          {topRowOutcomes.map((outcome) => (
+            <OutcomeCard key={outcome.title} outcome={outcome} />
+          ))}
+        </div>
+        <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {bottomRowOutcomes.map((outcome) => (
+            <OutcomeCard key={outcome.title} outcome={outcome} />
           ))}
         </div>
       </div>
     </section>
+  )
+}
+
+function OutcomeCard({ outcome }: { outcome: (typeof outcomes)[number] }) {
+  return (
+    <Card className="h-full gap-0 rounded-[14px] border border-border border-t-primary/20 bg-card py-0 shadow-[0_4px_24px_rgba(13,27,62,0.07),0_1px_4px_rgba(13,27,62,0.05)] transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-primary/25 hover:border-t-primary/45 hover:shadow-[0_8px_30px_rgba(13,27,62,0.09),0_2px_8px_rgba(27,73,212,0.08)]">
+      <CardHeader className="p-8 pb-5">
+        <div
+          className="mb-5 flex size-11 items-center justify-center rounded-[10px] bg-primary/10 text-primary"
+          aria-hidden="true"
+        >
+          <HugeiconsIcon icon={outcome.icon} className="size-5" />
+        </div>
+        <CardTitle className="text-[19px] leading-[1.28] font-semibold text-foreground">
+          {outcome.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex grow flex-col px-8 pt-0 pb-8">
+        <ul className="flex flex-1 flex-col gap-3">
+          {outcome.items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-[16px] leading-[1.55] text-muted-foreground"
+            >
+              <span
+                className="mt-[0.35em] flex size-4 shrink-0 items-center justify-center text-primary"
+                aria-hidden="true"
+              >
+                <HugeiconsIcon
+                  icon={CheckmarkCircle01Icon}
+                  className="size-4"
+                />
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-7 border-t border-border pt-5">
+          <p className="mb-1 text-[12px] leading-[1.35] font-bold tracking-[0.08em] text-text-subtle uppercase">
+            Result
+          </p>
+          <p className="text-[16px] leading-[1.45] font-semibold text-primary">
+            {outcome.result}
+          </p>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
