@@ -52,10 +52,10 @@ export function SiteFooter() {
         <div className="type-fine flex flex-col justify-between gap-3 text-text-subtle sm:flex-row dark:text-white/45">
           <p>© 2026 Nomos AI</p>
           <a
-            href="mailto:hello@nomosiq.ai"
+            href="mailto:daniphil@nomosiq.com"
             className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none dark:hover:text-white dark:focus-visible:ring-white/35"
           >
-            hello@nomosiq.ai
+            daniphil@nomosiq.com
           </a>
         </div>
       </div>

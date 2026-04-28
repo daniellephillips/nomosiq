@@ -27,9 +27,9 @@ export function ContactPage() {
           Prefer email?{" "}
           <a
             className="font-medium text-foreground"
-            href="mailto:hello@nomosiq.ai"
+            href="mailto:daniphil@nomosiq.com"
           >
-            hello@nomosiq.ai
+            daniphil@nomosiq.com
           </a>
         </p>
       </div>

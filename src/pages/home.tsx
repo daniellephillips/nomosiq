@@ -254,7 +254,7 @@ function HeroMockup() {
           {workflowSteps.map((step, index) => (
             <div key={step.title} className="flex items-start gap-4">
               <div
-                className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-[16px] leading-none font-bold text-primary-foreground"
+                className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[var(--cta-button)] text-[16px] leading-none font-bold text-primary-foreground"
                 aria-hidden="true"
               >
                 {index + 1}
@@ -442,7 +442,7 @@ function SetupSection() {
             <Card key={step.title} className="rounded-[14px] border bg-card">
               <CardContent className="p-8 text-center md:p-10">
                 <div
-                  className="mx-auto mb-6 flex size-12 items-center justify-center rounded-full bg-primary text-[18px] leading-none font-bold text-primary-foreground"
+                  className="mx-auto mb-6 flex size-12 items-center justify-center rounded-full bg-[var(--cta-button)] text-[18px] leading-none font-bold text-primary-foreground"
                   aria-hidden="true"
                 >
                   {index + 1}

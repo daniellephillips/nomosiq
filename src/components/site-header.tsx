@@ -78,10 +78,10 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-background/95 transition-[border-color,backdrop-filter,background-color] dark:bg-[var(--surface-brand)]",
+        "sticky top-0 z-50 border-b bg-muted/30 transition-[border-color,backdrop-filter,background-color] dark:bg-[var(--surface-brand)]",
         isScrolled
           ? "border-border backdrop-blur-md dark:border-white/10"
-          : "border-transparent backdrop-blur-none dark:border-white/10"
+          : "border-border backdrop-blur-none dark:border-white/10"
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1140px] items-center justify-between px-5 md:px-8 lg:px-12">
@@ -117,7 +117,7 @@ export function SiteHeader() {
           <Button
             asChild
             size="lg"
-            className="h-10 rounded-lg px-5 dark:bg-[var(--surface-brand-cta)] dark:hover:bg-[var(--surface-brand-cta-hover)]"
+            className="h-10 rounded-lg px-5 dark:bg-[var(--cta-button)] dark:hover:bg-[var(--surface-brand-cta-hover)]"
           >
             <a href={demoUrl} target="_blank" rel="noreferrer">
               Book Demo
