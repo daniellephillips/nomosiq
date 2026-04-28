@@ -12,7 +12,7 @@ const routerBasename = window.location.hostname.endsWith("github.io")
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="dark" storageKey="nomosiq-theme">
+    <ThemeProvider defaultTheme="light" storageKey="nomosiq-theme">
       <BrowserRouter basename={routerBasename}>
         <App />
       </BrowserRouter>

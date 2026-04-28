@@ -35,10 +35,12 @@ function NavItem({
   href,
   label,
   onClick,
+  tone = "light",
 }: {
   href: string
   label: string
   onClick?: () => void
+  tone?: "light" | "dark"
 }) {
   return (
     <NavLink
@@ -46,8 +48,14 @@ function NavItem({
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
-          isActive && "bg-muted text-foreground"
+          "type-ui flex min-h-11 items-center rounded-md px-3 py-2 transition-colors focus-visible:ring-[3px] focus-visible:outline-none",
+          tone === "dark"
+            ? "text-white/70 hover:text-white focus-visible:ring-white/35"
+            : "text-muted-foreground hover:text-foreground focus-visible:ring-ring/50",
+          isActive &&
+            (tone === "dark"
+              ? "bg-white/10 text-white"
+              : "bg-muted text-foreground")
         )
       }
     >
@@ -76,13 +84,13 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-background/95 transition-[border-color,backdrop-filter,background-color]",
+        "sticky top-0 z-50 border-b bg-[#0d1b3e] transition-[border-color,backdrop-filter,background-color]",
         isScrolled
-          ? "border-border backdrop-blur-md"
-          : "border-transparent backdrop-blur-none"
+          ? "border-white/10 backdrop-blur-md"
+          : "border-white/10 backdrop-blur-none"
       )}
     >
-      <div className="mx-auto flex h-[64px] w-full max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-6">
+      <div className="mx-auto flex h-16 w-full max-w-[1140px] items-center justify-between px-5 md:px-8 lg:px-12">
         <Link
           to="/"
           className="flex min-h-11 items-center gap-4"
@@ -92,9 +100,9 @@ export function SiteHeader() {
             src={gazelleLogo}
             alt=""
             aria-hidden="true"
-            className="h-9 w-auto object-contain brightness-0 md:h-11 dark:invert"
+            className="h-9 w-auto object-contain md:h-[38px]"
           />
-          <span className="font-heading text-[19px] leading-5 font-semibold tracking-normal text-foreground">
+          <span className="font-heading text-[16px] leading-5 font-bold tracking-normal text-white">
             Nomos AI
           </span>
         </Link>
@@ -105,14 +113,14 @@ export function SiteHeader() {
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink asChild>
-                    <NavItem href={item.href} label={item.label} />
+                    <NavItem href={item.href} label={item.label} tone="dark" />
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <ThemeToggle />
-          <Button asChild size="lg">
+          <ThemeToggle className="border-white/25 text-white hover:bg-white/10 hover:text-white dark:border-white/25 dark:text-white dark:hover:bg-white/10 dark:hover:text-white" />
+          <Button asChild size="lg" className="h-10 rounded-lg px-5">
             <a href={demoUrl} target="_blank" rel="noreferrer">
               Book Demo
             </a>

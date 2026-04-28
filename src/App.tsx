@@ -21,9 +21,9 @@ const socialImage = `${siteUrl}/nomos-ai-gazelle-black.svg`
 
 const pageMeta: Record<string, PageMeta> = {
   "/": {
-    title: "Nomos AI | Private AI for Legal Teams",
+    title: "Nomos AI | AI Agents for Small Law Firms",
     description:
-      "Private AI for legal teams handling sensitive documents. Search, review, summarize, and validate legal documents with cited answers inside your firm's environment.",
+      "Private AI agents that handle document review, contract analysis, and case prep inside existing small law firm workflows.",
     url: `${siteUrl}/`,
     image: socialImage,
     twitterCard: "summary",

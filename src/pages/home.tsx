@@ -1,11 +1,19 @@
 import {
-  Audit01Icon,
-  FileSearchIcon,
-  LegalHammerIcon,
+  AiSearchIcon,
+  BubbleChatIcon,
+  ChartIncreaseIcon,
+  CheckmarkCircle01Icon,
+  Clock03Icon,
+  DocumentAttachmentIcon,
+  File01Icon,
+  Folder01Icon,
+  GridViewIcon,
+  LegalDocument01Icon,
   Link01Icon,
   LockPasswordIcon,
-  UserGroupIcon,
-  TaskDaily01Icon,
+  PencilEdit01Icon,
+  Shield01Icon,
+  StarIcon,
 } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Link } from "react-router-dom"
@@ -16,192 +24,175 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { demoUrl } from "@/lib/constants"
 
-const proofBadges = [
+const proofPoints = [
   {
-    label: "Private deployment",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    icon: DocumentAttachmentIcon,
+    label: "We fit with your tools",
   },
   {
-    label: "Source-cited answers",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    icon: Shield01Icon,
+    label: "Private by default",
   },
   {
-    label: "Audit logs and RBAC",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    icon: Clock03Icon,
+    label: "Source-backed answers",
   },
   {
-    label: "No external LLM APIs",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    icon: GridViewIcon,
+    label: "Set up for your function",
   },
 ]
 
-const workflowSignals = [
+const workflowSteps = [
   {
-    label: "Citation-backed answer",
-    className: "border-accent/30 bg-accent/10 text-accent",
+    title: "Upload documents",
+    text: "Contracts, briefs, emails",
   },
   {
-    label: "Audit log visible",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    title: "AI agent analyzes",
+    text: "Extracts key insights",
   },
   {
-    label: "Role-based access",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
-  },
-  {
-    label: "No external LLM API",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
-  },
-  {
-    label: "Private inference",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    title: "Get answers fast",
+    text: "Cited and verifiable",
   },
 ]
 
-const auditTrail = [
-  { label: "Query submitted", status: "complete" },
-  { label: "Source retrieved", status: "complete" },
-  { label: "Answer generated", status: "complete" },
-  { label: "Review pending", status: "pending" },
+const valueItems = [
+  {
+    title: "Small-firm workflow fit",
+    text: "Designed around lean teams, existing systems, and fast adoption.",
+  },
+  {
+    title: "Outcome-led automation",
+    text: "Reduce repetitive review, intake, drafting, and case-prep work.",
+  },
+  {
+    title: "Attorney-controlled outputs",
+    text: "Every answer stays reviewable, cited, and grounded in firm data.",
+  },
 ]
 
-const trustItems = [
+const billableTimeItems = [
   {
-    icon: LockPasswordIcon,
-    title: "Private deployment",
-    text: "Your data never leaves your environment.",
-    iconClassName:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
+    icon: Clock03Icon,
+    title: "Move faster through cases",
+    text: "AI agents that keep up with your pace, not slow it down.",
+  },
+  {
+    icon: BubbleChatIcon,
+    title: "Respond to clients quicker",
+    text: "Get answers to client questions in seconds, not hours.",
+  },
+  {
+    icon: ChartIncreaseIcon,
+    title: "Increase billable output without increasing headcount",
+    text: "More capacity from your existing team, without adding staff.",
+  },
+]
+
+const outcomes = [
+  {
+    icon: Folder01Icon,
+    title: "Understand a case faster",
+    items: [
+      "Summarize large case files and discovery",
+      "Extract key facts and timelines",
+      "Highlight what matters",
+    ],
+    result: "Hours saved, clarity gained",
+  },
+  {
+    icon: File01Icon,
+    title: "Review contracts with confidence",
+    items: [
+      "Flag risks and low items",
+      "Compare against playbooks",
+      "Generate structured redline notes",
+    ],
+    result: "Fewer mistakes, stronger reviews",
+  },
+  {
+    icon: AiSearchIcon,
+    title: "Find answers across documents instantly",
+    items: [
+      "Search everything in seconds",
+      "Cite exact sources",
+      "Jump to relevant passages",
+    ],
+    result: "Answers when you need them",
+  },
+  {
+    icon: PencilEdit01Icon,
+    title: "Produce first-pass legal work faster",
+    items: [
+      "Draft memos, summaries, and letters",
+      "Generate outlines and talking points",
+      "Maintain your firm's voice",
+    ],
+    result: "First drafts in less time",
+  },
+  {
+    icon: GridViewIcon,
+    title: "Structure intake and case prep",
+    items: [
+      "Convert intake notes into structured case summaries",
+      "Identify missing information",
+      "Create client next steps",
+    ],
+    result: "Better prep, stronger starts",
+  },
+]
+
+const setupSteps = [
+  {
+    title: "Connect your workflow",
+    text: "We integrate with your existing tools, documents, and storage systems.",
+  },
+  {
+    title: "Deploy focused AI agents",
+    text: "Each agent is configured for your practice area, workflows, and standards.",
+  },
+  {
+    title: "Review and use outputs",
+    text: "All outputs are grounded in your data so you can review with confidence.",
+  },
+]
+
+const securityPillars = [
+  {
+    icon: Shield01Icon,
+    title: "Not another legal platform",
+    text: "We fit into your firm, not the other way around.",
+    items: [
+      "No platform migration",
+      "No workflow disruption",
+      "No heavy implementation",
+    ],
   },
   {
     icon: Link01Icon,
-    title: "Source-linked answers",
-    text: "Every answer cites its source.",
-    iconClassName: "border-accent/30 bg-accent/10 text-accent",
-  },
-  {
-    icon: Audit01Icon,
-    title: "Full audit visibility",
-    text: "Track usage, sources, and reviews.",
-    iconClassName: "border-accent/30 bg-accent/10 text-accent",
-  },
-  {
-    icon: UserGroupIcon,
-    title: "Built for sensitive work",
-    text: "Trusted by legal teams and advisors.",
-    iconClassName:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
-  },
-]
-
-const useCases = [
-  {
-    icon: FileSearchIcon,
-    title: "Document intelligence",
-    text: "Ask questions across leases, pleadings, transcripts, contracts, and discovery files with cited answers tied to source material.",
-    iconClassName: "border-accent/30 bg-accent/10 text-accent",
-  },
-  {
-    icon: LegalHammerIcon,
-    title: "Litigation support",
-    text: "Summarize pleadings, transcripts, and evidence while extracting key facts, people, dates, and timelines for review.",
-    iconClassName:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
-  },
-  {
-    icon: TaskDaily01Icon,
-    title: "Contract review",
-    text: "Identify key clauses, flag deviations from firm standards, and generate structured review notes faster.",
-    iconClassName: "border-accent/30 bg-accent/10 text-accent",
+    title: "Works with the tools you already rely on",
+    text: "We connect AI agents to your existing ecosystem.",
+    items: [
+      "Document and storage systems",
+      "Case files and shared drives",
+      "Email and internal workflows",
+    ],
   },
   {
     icon: LockPasswordIcon,
-    title: "Redaction checks",
-    text: "Detect sensitive information such as names, account numbers, and addresses before filing or sharing.",
-    iconClassName: "border-accent/30 bg-accent/10 text-accent",
-  },
-]
-
-const howItWorksSteps = [
-  {
-    title: "Ingest",
-    text: "Connect or upload documents into the firm-controlled environment.",
-    className:
-      "border-success-border bg-success-muted text-success-foreground dark:text-success",
-  },
-  {
-    title: "Retrieve",
-    text: "Ask questions or trigger workflows across matters, clauses, transcripts, and filings.",
-    className: "border-accent/30 bg-accent/10 text-accent",
-  },
-  {
-    title: "Cite and review",
-    text: "Every answer links back to source text so attorneys can verify before acting.",
-    className:
-      "border-warning-border bg-warning-muted text-warning-foreground dark:text-warning",
-  },
-]
-
-const workflowFlow = [
-  {
-    label: "Document set",
-    detail: "Firm-controlled workspace",
-    className: "text-success-foreground dark:text-success",
-  },
-  {
-    label: "Query",
-    detail: "Targeted legal question",
-    className: "text-accent",
-  },
-  {
-    label: "Source-backed answer",
-    detail: "Cited response with source text",
-    className: "text-accent",
-  },
-  {
-    label: "Attorney review",
-    detail: "Human verification before action",
-    className: "text-warning-foreground dark:text-warning",
-  },
-]
-
-const securityDetails = [
-  {
-    title: "Deployment model",
-    text: "Firm-controlled environments for sensitive client materials.",
-    className: "border-success-border",
-  },
-  {
-    title: "Access control / RBAC",
-    text: "Restrict matter access by role, team, or permission model.",
-    className: "border-success-border",
-  },
-  {
-    title: "Audit visibility",
-    text: "Track document access, source retrieval, answer generation, and review activity.",
-    className: "border-accent/30",
-  },
-  {
-    title: "Citation-backed review",
-    text: "Every answer links back to source text so attorneys can verify before acting.",
-    className: "border-accent/30",
-  },
-  {
-    title: "Supported systems",
-    text: "Designed to connect with document repositories, matter files, and legal workflow tools.",
-    className: "border-accent/30",
+    title: "Private and controlled by default",
+    text: "Your data stays with you.",
+    items: [
+      "Documents stay within your environment",
+      "Outputs are grounded in your data",
+      "No training on your client information",
+    ],
   },
 ]
 
@@ -209,237 +200,166 @@ const faqItems = [
   {
     question: "Where does processing happen?",
     answer:
-      "Nomos AI is designed for firm-controlled environments. The implementation model depends on the firm’s infrastructure, data policies, and workflow requirements.",
+      "Processing happens within your firm's controlled environment. Documents are never sent to shared cloud infrastructure or used to train models.",
   },
   {
-    question: "How are answers reviewed?",
+    question: "Do we need to change our tools?",
     answer:
-      "Answers are source-linked so attorneys can verify the underlying text before acting. The system is intended to support legal review, not replace attorney judgment.",
+      "No. Nomos AI connects to your existing document storage, case management, and email systems. There's nothing new to learn or migrate to.",
   },
   {
-    question: "What systems does Nomos AI support?",
+    question: "How accurate are the outputs?",
     answer:
-      "Nomos AI is designed to work with legal document repositories, matter files, transcripts, contracts, and related workflow systems.",
+      "Every answer is grounded in your actual documents with source citations. Attorneys review outputs before use. AI assists, you decide.",
   },
   {
-    question: "Is client data used to train external models?",
+    question: "Is client data used to train models?",
     answer:
-      "No. Nomos AI is positioned for private legal workflows where sensitive client materials are not used to train public or external foundation models.",
+      "Never. Your client data stays within your environment and is never used to train or improve any external model.",
   },
   {
-    question: "What deployment models are supported?",
+    question: "How long does setup take?",
     answer:
-      "Deployment depends on the firm’s security requirements. The product direction supports private, firm-controlled environments rather than public, consumer-style AI workflows.",
+      "Most firms are up and running within a week. Our team handles the integration and configuration so you don't need technical resources.",
   },
   {
-    question: "How long does implementation take?",
+    question: "What size firm is this for?",
     answer:
-      "Implementation timing depends on document sources, access-control requirements, and workflow scope. A focused pilot can start with a narrow document-review workflow.",
+      "Nomos AI is built specifically for small law firms, typically 2 to 30 attorneys. The product is designed around the workflows and constraints of smaller practices.",
   },
 ]
 
-function HeroProductMockup() {
+function SectionHeader({ title, text }: { title: string; text?: string }) {
   return (
-    <Card
+    <div className="mx-auto mb-14 max-w-3xl text-center md:mb-16">
+      <h2 className="type-h2 text-balance">{title}</h2>
+      {text ? (
+        <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-[1.65] text-muted-foreground">
+          {text}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+function HeroMockup() {
+  return (
+    <div
+      className="flex flex-col gap-5 lg:justify-self-end"
       role="img"
-      className="w-full max-w-[540px] min-w-0 overflow-hidden rounded-2xl border bg-surface-3 lg:col-span-6 lg:mt-3 lg:justify-self-end"
-      aria-label="Product mockup showing legal document review with cited AI answer and audit trail."
+      aria-label="Workflow mockup showing document upload, AI analysis, and source-backed legal answer."
     >
-      <CardContent className="grid gap-5 p-5 sm:p-6">
-        <div>
-          <Badge
-            className="border-accent/30 bg-accent/10 px-3 py-1 text-[14px] leading-[18px] text-accent"
-            variant="outline"
-          >
-            Example workflow
-          </Badge>
-        </div>
-        <div className="flex flex-col gap-3 border-b pb-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="type-ui text-foreground">Matter: Lease Review</p>
-            <p className="mt-1 text-[15px] leading-5 text-text-subtle">
-              Commercial Lease · 14 pages · Private workspace
-            </p>
-          </div>
-          <Badge
-            className="w-fit border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
-            variant="secondary"
-          >
-            Attorney review required
-          </Badge>
-        </div>
-
-        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-          <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <p className="type-ui text-foreground">Source document</p>
-              <span className="min-w-0 text-[14px] leading-[18px] break-words text-text-subtle">
-                Lease_Agreement.pdf
-              </span>
-            </div>
-            <div className="space-y-4 rounded-xl border bg-card p-4">
+      <Card className="rounded-[14px] border bg-card shadow-[0_4px_24px_rgba(13,27,62,0.07),0_1px_4px_rgba(13,27,62,0.05)]">
+        <CardContent className="flex flex-col gap-6 p-8">
+          {workflowSteps.map((step, index) => (
+            <div key={step.title} className="flex items-start gap-4">
+              <div
+                className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-[16px] leading-none font-bold text-primary-foreground"
+                aria-hidden="true"
+              >
+                {index + 1}
+              </div>
               <div>
-                <p className="type-ui text-foreground">
-                  Section 12.2 — Termination for Cause
+                <p className="text-[16px] leading-[1.35] font-semibold text-foreground">
+                  {step.title}
                 </p>
-                <p className="mt-3 text-[15px] leading-6 text-text-body">
-                  Either party may terminate this agreement with sixty (60)
-                  days&apos; written notice if a material breach remains uncured
-                  for thirty (30) days after notice.
-                </p>
-              </div>
-              <div className="rounded-xl border-l-2 border-accent bg-accent/10 p-3">
-                <p className="text-[15px] leading-6 text-text-body">
-                  Highlighted clause: notice period, breach condition, and cure
-                  window identified for attorney review.
+                <p className="mt-1 text-[16px] leading-[1.5] text-muted-foreground">
+                  {step.text}
                 </p>
               </div>
             </div>
-          </div>
+          ))}
+        </CardContent>
+      </Card>
 
-          <div className="grid min-w-0 gap-4">
-            <div className="min-w-0 rounded-2xl border bg-surface-1 p-4">
-              <p className="type-ui text-text-subtle">Question</p>
-              <p className="mt-2 text-[16px] leading-[1.6] text-text-body">
+      <Card className="rounded-[14px] border bg-card shadow-[0_4px_24px_rgba(13,27,62,0.07),0_1px_4px_rgba(13,27,62,0.05)]">
+        <CardContent className="p-8">
+          <div className="rounded-[10px] bg-muted p-6">
+            <div className="mb-5 flex items-start gap-3">
+              <div
+                className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"
+                aria-hidden="true"
+              >
+                <HugeiconsIcon icon={Clock03Icon} className="size-4" />
+              </div>
+              <p className="text-[16px] leading-[1.45] font-semibold text-foreground">
                 What are the termination rights in this lease?
               </p>
-              <div className="mt-4 rounded-xl border bg-card p-4">
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <Badge
-                    className="border-warning-border bg-warning-muted px-3 py-1 text-[14px] leading-[18px] text-warning-foreground dark:text-warning"
-                    variant="outline"
-                  >
-                    Review pending
-                  </Badge>
-                  <span className="text-[14px] leading-[18px] text-accent">
-                    Confidence: source-backed
-                  </span>
-                </div>
-                <p className="text-[16px] leading-[1.6] text-text-body">
-                  The lease allows termination after 60 days&apos; written
-                  notice if a material breach remains uncured for 30 days.
-                </p>
-                <div className="mt-4 rounded-xl border border-accent/30 bg-accent/10 p-3">
-                  <p className="type-ui text-foreground">
-                    Source: Section 12.2, Termination for Cause
-                  </p>
-                  <span className="mt-2 inline-block text-[15px] leading-5 font-medium text-accent">
-                    Jump to source
-                  </span>
-                </div>
-              </div>
             </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {workflowSignals.map((signal) => (
-                <div
-                  key={signal.label}
-                  className={`rounded-xl border px-3 py-2 ${signal.className}`}
-                >
-                  <p className="text-[14px] leading-[18px]">{signal.label}</p>
-                </div>
-              ))}
+            <p className="mb-2 text-[16px] leading-[1.35] font-bold tracking-[0.08em] text-text-subtle uppercase">
+              Answer
+            </p>
+            <p className="mb-5 text-[16px] leading-[1.6] text-muted-foreground">
+              Either party may terminate this agreement with sixty (60) days'
+              written notice if a material breach remains uncurable thirty (30)
+              days after notice.
+            </p>
+            <p className="mb-2 text-[16px] leading-[1.35] font-bold tracking-[0.08em] text-text-subtle uppercase">
+              Source
+            </p>
+            <div className="flex items-start gap-2 text-[16px] leading-[1.55] font-medium text-primary">
+              <span
+                className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                aria-hidden="true"
+              />
+              <span>
+                Section 12.3 · Termination for Cause · Lease Agreement.pdf · p.
+                14
+              </span>
             </div>
           </div>
-        </div>
-
-        <div className="rounded-2xl border bg-surface-1 p-4">
-          <p className="type-ui text-foreground">Audit trail</p>
-          <div className="mt-3 grid gap-2 sm:grid-cols-4">
-            {auditTrail.map((item) => (
-              <div key={item.label} className="flex items-center gap-2">
-                <span
-                  className={`size-2 rounded-full ${
-                    item.status === "pending" ? "bg-warning" : "bg-accent"
-                  }`}
-                  aria-hidden="true"
-                />
-                <span className="text-[14px] leading-[18px] text-text-subtle">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   )
 }
 
 function TrustStrip() {
   return (
-    <section
-      className="border-b bg-surface-1"
-      aria-label="Nomos AI trust and deployment highlights"
-    >
-      <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-card md:grid-cols-2 xl:grid-cols-4">
-          {trustItems.map((item, index) => (
-            <div
-              key={item.title}
-              className={`flex gap-4 p-5 ${
-                index > 0 ? "border-t md:border-t-0" : ""
-              } ${
-                index % 2 === 1 ? "md:border-l" : ""
-              } ${index > 1 ? "md:border-t xl:border-t-0" : ""} ${
-                index > 0 ? "xl:border-l" : ""
-              }`}
-            >
-              <div
-                className={`flex size-11 shrink-0 items-center justify-center rounded-xl border ${item.iconClassName}`}
-                aria-hidden="true"
-              >
-                <HugeiconsIcon icon={item.icon} className="size-5" />
-              </div>
-              <div>
-                <p className="type-ui text-foreground">{item.title}</p>
-                <p className="mt-1 text-[14px] leading-[18px] text-muted-foreground">
-                  {item.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section className="border-y bg-card" aria-label="Nomos AI value summary">
+      <div className="mx-auto grid w-full max-w-[1140px] gap-6 px-5 py-12 md:grid-cols-3 md:px-8 lg:px-12">
+        {valueItems.map((item) => (
+          <div key={item.title} className="flex flex-col gap-3">
+            <p className="text-[17px] leading-[1.4] font-semibold text-foreground">
+              {item.title}
+            </p>
+            <p className="text-[16px] leading-[1.6] text-muted-foreground">
+              {item.text}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
 
-function HowItWorksSection() {
+function BillableTimeSection() {
   return (
-    <section className="border-y bg-surface-1">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-        <div className="max-w-[640px]">
-          <Badge
-            className="border-accent/30 bg-accent/10 text-accent"
-            variant="secondary"
-          >
-            How it works
-          </Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Query, review, and validate inside your environment.
+    <section className="bg-surface-1 py-[72px] md:py-24 lg:py-32">
+      <div className="mx-auto grid w-full max-w-[1140px] items-center gap-16 px-5 md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
+        <div>
+          <h2 className="type-h2 text-balance">
+            Turn repetitive work into billable time
           </h2>
-          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            Nomos AI turns legal document review into a controlled workflow:
-            ingest matter materials, ask targeted questions, and verify every
-            answer against source text before attorneys act.
+          <p className="mt-8 text-[18px] leading-[1.65] text-muted-foreground">
+            AI removes the busywork that slows you down so you can focus on
+            strategy and clients.
           </p>
-          <div className="mt-8 grid gap-5 border-l border-border pl-5">
-            {howItWorksSteps.map((step, index) => (
-              <div
-                key={step.title}
-                className="grid gap-4 sm:grid-cols-[auto_1fr]"
-              >
+          <div className="mt-10 flex flex-col gap-8">
+            {billableTimeItems.map((item) => (
+              <div key={item.title} className="flex items-start gap-5">
                 <div
-                  className={`flex size-9 items-center justify-center rounded-full border text-[15px] leading-none font-bold tabular-nums ${step.className}`}
+                  className="flex size-12 shrink-0 items-center justify-center rounded-full border bg-card text-primary"
                   aria-hidden="true"
                 >
-                  {index + 1}
+                  <HugeiconsIcon icon={item.icon} className="size-6" />
                 </div>
                 <div>
-                  <h3 className="type-ui text-foreground">{step.title}</h3>
-                  <p className="mt-1 text-[16px] leading-[1.6] text-muted-foreground">
-                    {step.text}
+                  <h3 className="text-[18px] leading-[1.35] font-semibold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[16px] leading-[1.6] text-muted-foreground">
+                    {item.text}
                   </p>
                 </div>
               </div>
@@ -447,42 +367,16 @@ function HowItWorksSection() {
           </div>
         </div>
 
-        <Card className="min-w-0 self-start rounded-2xl border bg-surface-3">
-          <CardContent className="grid gap-4 p-5 sm:p-6">
-            <div>
-              <Badge
-                className="border-success-border bg-success-muted text-success-foreground dark:text-success"
-                variant="outline"
-              >
-                Private workflow
-              </Badge>
-              <p className="mt-4 text-[18px] leading-[1.5] font-medium break-words text-foreground">
-                Document set → Query → Source-backed answer → Attorney review
-              </p>
-            </div>
-            <div className="grid gap-0 overflow-hidden rounded-2xl border bg-surface-1">
-              {workflowFlow.map((item, index) => (
-                <div
-                  key={item.label}
-                  className="grid gap-3 border-b p-4 last:border-b-0 sm:grid-cols-[auto_1fr]"
-                >
-                  <div
-                    className={`flex size-9 items-center justify-center rounded-full border bg-card ${item.className}`}
-                    aria-hidden="true"
-                  >
-                    <span className="text-[15px] leading-none font-bold tabular-nums">
-                      {index + 1}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="type-ui text-foreground">{item.label}</p>
-                    <p className="mt-1 text-[15px] leading-5 text-muted-foreground">
-                      {item.detail}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <Card className="min-h-[380px] rounded-2xl border bg-card">
+          <CardContent className="flex h-full min-h-[380px] flex-col items-center justify-center gap-4 p-10 text-center text-text-subtle">
+            <HugeiconsIcon
+              icon={LegalDocument01Icon}
+              className="size-12 opacity-45"
+              aria-hidden="true"
+            />
+            <p className="font-mono text-[16px] leading-[1.4]">
+              productivity chart
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -490,49 +384,123 @@ function HowItWorksSection() {
   )
 }
 
-function SecurityAdoptionSection() {
+function OutcomesSection() {
   return (
-    <section id="security" className="border-y bg-background">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div className="max-w-[620px]">
-          <Badge
-            className="border-success-border bg-success-muted text-success-foreground dark:text-success"
-            variant="secondary"
-          >
-            Security-led adoption
-          </Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Private AI for matters that cannot leave firm control.
-          </h2>
-          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            Nomos AI sits inside the firm&apos;s environment and supports
-            source-cited retrieval, access controls, and audit visibility for
-            sensitive legal workflows.
-          </p>
-          <div className="mt-6 rounded-2xl border border-success-border bg-card p-5">
-            <p className="type-ui text-success-foreground dark:text-success">
-              Built around firm-controlled review.
-            </p>
-            <p className="mt-2 text-[15px] leading-6 text-muted-foreground">
-              Security controls are presented as part of the legal workflow, not
-              as a separate dashboard attorneys have to interpret.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {securityDetails.map((detail) => (
+    <section className="bg-background py-[72px] md:py-24 lg:py-32">
+      <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
+        <SectionHeader title="Built around the outcomes attorneys actually need" />
+        <div className="grid gap-6 md:grid-cols-2 md:gap-7 xl:grid-cols-5 xl:gap-8">
+          {outcomes.map((outcome) => (
             <Card
-              key={detail.title}
-              className="rounded-2xl border bg-card"
+              key={outcome.title}
+              className="h-full rounded-[14px] border bg-card"
             >
-              <CardContent className={`border-t-2 p-5 ${detail.className}`}>
-                <div>
-                  <h3 className="type-ui text-foreground">{detail.title}</h3>
-                  <p className="mt-2 text-[16px] leading-[1.6] text-muted-foreground">
-                    {detail.text}
-                  </p>
+              <CardHeader className="p-8 pb-5">
+                <div
+                  className="mb-5 flex size-11 items-center justify-center rounded-[10px] bg-primary/10 text-primary"
+                  aria-hidden="true"
+                >
+                  <HugeiconsIcon icon={outcome.icon} className="size-5" />
                 </div>
+                <CardTitle className="text-[18px] leading-[1.3] font-semibold">
+                  {outcome.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex grow flex-col px-8 pt-0 pb-8">
+                <ul className="flex flex-1 flex-col gap-3">
+                  {outcome.items.map((item) => (
+                    <li
+                      key={item}
+                      className="relative pl-5 text-[16px] leading-[1.55] text-muted-foreground before:absolute before:top-[0.7em] before:left-0 before:size-1.5 before:rounded-full before:border before:border-primary before:bg-primary/10"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-7 border-t pt-5 text-[16px] leading-[1.45] font-semibold text-primary">
+                  <p className="mb-1 text-[16px] leading-[1.35] font-medium tracking-[0.07em] text-text-subtle uppercase">
+                    Result
+                  </p>
+                  {outcome.result}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function SetupSection() {
+  return (
+    <section className="bg-surface-1 py-[72px] md:py-24 lg:py-32">
+      <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
+        <SectionHeader title="Simple setup. Immediate impact." />
+        <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+          {setupSteps.map((step, index) => (
+            <Card key={step.title} className="rounded-[14px] border bg-card">
+              <CardContent className="p-8 text-center md:p-10">
+                <div
+                  className="mx-auto mb-6 flex size-12 items-center justify-center rounded-full bg-primary text-[18px] leading-none font-bold text-primary-foreground"
+                  aria-hidden="true"
+                >
+                  {index + 1}
+                </div>
+                <h3 className="text-[20px] leading-[1.3] font-semibold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground">
+                  {step.text}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function SecurityControlSection() {
+  return (
+    <section className="bg-background py-[72px] md:py-24 lg:py-32">
+      <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
+        <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+          {securityPillars.map((pillar) => (
+            <Card key={pillar.title} className="rounded-[14px] border bg-card">
+              <CardContent className="p-8 md:p-10">
+                <div
+                  className="mb-6 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  aria-hidden="true"
+                >
+                  <HugeiconsIcon icon={pillar.icon} className="size-6" />
+                </div>
+                <h2 className="text-[22px] leading-[1.25] font-semibold tracking-normal text-foreground">
+                  {pillar.title}
+                </h2>
+                <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground">
+                  {pillar.text}
+                </p>
+                <ul className="mt-6 flex flex-col gap-4">
+                  {pillar.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-[16px] leading-[1.45] text-muted-foreground"
+                    >
+                      <span
+                        className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"
+                        aria-hidden="true"
+                      >
+                        <HugeiconsIcon
+                          icon={CheckmarkCircle01Icon}
+                          className="size-4"
+                        />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
@@ -544,35 +512,41 @@ function SecurityAdoptionSection() {
 
 function FaqSection() {
   return (
-    <section className="bg-background">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-        <div className="max-w-[560px]">
-          <Badge
-            className="border-accent/30 bg-accent/10 text-accent"
-            variant="secondary"
-          >
+    <section className="bg-surface-1 py-[72px] md:py-24 lg:py-32">
+      <div className="mx-auto grid w-full max-w-[1140px] gap-12 px-5 md:px-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 lg:px-12">
+        <div>
+          <p className="text-[16px] leading-[1.4] font-semibold tracking-[0.12em] text-primary uppercase">
             FAQ
-          </Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Questions law firms ask before adopting private AI.
-          </h2>
-          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            Straight answers about deployment, review, data use, and
-            implementation.
           </p>
+          <h2 className="type-h2 mt-5 text-balance">
+            Questions small law firms ask before getting started
+          </h2>
+          <p className="mt-6 text-[18px] leading-[1.65] text-muted-foreground">
+            Straight answers about setup, privacy and day-to-day use.
+          </p>
+          <Card className="mt-10 rounded-xl border bg-card">
+            <CardContent className="flex items-start gap-5 p-7">
+              <div
+                className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"
+                aria-hidden="true"
+              >
+                <HugeiconsIcon icon={StarIcon} className="size-5" />
+              </div>
+              <p className="text-[16px] leading-[1.6] text-muted-foreground">
+                Nomos AI provides source-backed answers with controlled
+                deployment so your firm stays secure and in control.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
-        <Accordion
-          type="single"
-          collapsible
-          className="rounded-2xl border bg-surface-3 px-4 sm:px-6"
-        >
+        <Accordion type="single" collapsible className="border-t">
           {faqItems.map((item) => (
             <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger className="min-h-14 text-left text-[18px] leading-[1.45] font-medium hover:text-accent">
+              <AccordionTrigger className="py-6 text-left text-[18px] leading-[1.45] font-semibold text-foreground hover:text-primary">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[16px] leading-[1.6] text-text-body">
+              <AccordionContent className="pb-6 text-[16px] leading-[1.7] text-muted-foreground">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
@@ -585,26 +559,29 @@ function FaqSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="border-t bg-surface-1">
-      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-accent/30 bg-surface-3 px-6 py-10 text-center sm:px-10">
-          <h2 className="text-3xl font-semibold tracking-normal">
-            See how Nomos AI fits your legal workflow.
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[18px] leading-[1.65] text-text-body">
-            Book a focused walkthrough of document querying, contract review,
-            and citation-backed answers.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
-            <Button asChild size="lg">
-              <a href={demoUrl} target="_blank" rel="noreferrer">
-                Book Demo
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/contact">Contact</Link>
-            </Button>
-          </div>
+    <section className="border-y bg-background py-[72px] text-center md:py-24 lg:py-32">
+      <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
+        <h2 className="type-h2 text-balance">
+          See how this fits your workflow
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-[18px] leading-[1.65] text-muted-foreground">
+          Book a focused walkthrough of how AI agents can reduce your workload
+          and free up billable time.
+        </p>
+        <div className="mt-10 flex flex-col justify-center gap-5 sm:flex-row">
+          <Button asChild size="lg" className="h-13 rounded-[9px] px-8">
+            <a href={demoUrl} target="_blank" rel="noreferrer">
+              Book a demo
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-13 rounded-[9px] px-8"
+          >
+            <Link to="/contact">Contact</Link>
+          </Button>
         </div>
       </div>
     </section>
@@ -614,99 +591,61 @@ function FinalCtaSection() {
 export function HomePage() {
   return (
     <>
-      <section className="border-b bg-surface-1">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-4 pt-14 pb-12 sm:px-6 sm:pt-[72px] sm:pb-16 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:pt-24 lg:pb-[88px]">
-          <div className="max-w-[560px] lg:col-span-6">
-            <Badge
-              className="mb-4 w-fit border-accent/30 bg-accent/10 px-3 py-1 text-[14px] leading-[18px] text-accent"
-              variant="secondary"
-            >
-              Private AI for law firms
-            </Badge>
-            <h1 className="type-h1 text-foreground">
-              Private AI for legal teams handling sensitive documents.
-            </h1>
-            <p className="mt-6 max-w-[620px] text-[20px] leading-[1.6] text-text-body">
-              Search, review, summarize, and validate legal documents with cited
-              answers inside your firm&apos;s environment.
+      <section className="bg-background">
+        <div className="mx-auto grid min-h-[calc(100vh-64px)] w-full max-w-[1140px] items-center gap-14 px-5 py-[72px] md:px-8 md:py-24 lg:grid-cols-2 lg:gap-20 lg:px-12 lg:py-28">
+          <div>
+            <p className="text-[16px] leading-[1.4] font-semibold tracking-[0.12em] text-primary uppercase">
+              AI Agents for Small Law Firms
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button asChild size="lg">
+            <h1 className="mt-5 max-w-2xl text-[clamp(38px,7vw,68px)] leading-[1.06] font-bold tracking-[-0.03em] text-balance text-foreground">
+              Free up hours of legal work every week
+            </h1>
+            <p className="mt-8 max-w-[520px] text-[20px] leading-[1.6] text-muted-foreground">
+              Private AI agents that handle document review, contract analysis,
+              and case prep inside your existing workflows.
+            </p>
+            <div className="mt-10 flex flex-col gap-5 sm:flex-row">
+              <Button asChild size="lg" className="h-13 rounded-[9px] px-8">
                 <a href={demoUrl} target="_blank" rel="noreferrer">
-                  Book Demo
+                  Book a demo
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="#security">View Security Approach</a>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-13 rounded-[9px] px-8"
+              >
+                <Link to="/contact">Contact</Link>
               </Button>
             </div>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {proofBadges.map((badge) => (
-                <Badge
-                  key={badge.label}
-                  className={`px-3 py-1 text-[14px] leading-[18px] ${badge.className}`}
-                  variant="outline"
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-5 border-t pt-8">
+              {proofPoints.map((point) => (
+                <div
+                  key={point.label}
+                  className="flex items-center gap-2 text-[16px] leading-[1.45] font-medium text-muted-foreground"
                 >
-                  {badge.label}
-                </Badge>
+                  <HugeiconsIcon
+                    icon={point.icon}
+                    className="size-4 opacity-60"
+                    aria-hidden="true"
+                  />
+                  {point.label}
+                </div>
               ))}
             </div>
           </div>
 
-          <HeroProductMockup />
+          <HeroMockup />
         </div>
       </section>
 
       <TrustStrip />
-
-      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="max-w-[680px]">
-          <Badge
-            className="border-accent/30 bg-accent/10 text-accent"
-            variant="secondary"
-          >
-            High-frequency workflows
-          </Badge>
-          <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-            Built for the legal work that eats review time.
-          </h2>
-          <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-            Nomos AI helps document-heavy practices review, summarize, and
-            verify legal materials faster without losing citation, privacy, or
-            attorney oversight.
-          </p>
-        </div>
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {useCases.map((item) => (
-            <Card
-              key={item.title}
-              className="h-full rounded-2xl border bg-card transition-colors hover:border-accent/30 hover:bg-surface-3"
-            >
-              <CardHeader className="p-6 pb-3">
-                <div
-                  className={`mb-4 flex size-11 items-center justify-center rounded-xl border ${item.iconClassName}`}
-                  aria-hidden="true"
-                >
-                  <HugeiconsIcon icon={item.icon} className="size-5" />
-                </div>
-                <CardTitle className="type-h3">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="px-6 pt-0 pb-6">
-                <p className="text-[16px] leading-[1.6] text-muted-foreground">
-                  {item.text}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <HowItWorksSection />
-
-      <SecurityAdoptionSection />
-
+      <BillableTimeSection />
+      <OutcomesSection />
+      <SetupSection />
+      <SecurityControlSection />
       <FaqSection />
-
       <FinalCtaSection />
     </>
   )

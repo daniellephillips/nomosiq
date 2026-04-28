@@ -5,50 +5,40 @@ import { Separator } from "@/components/ui/separator"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-muted/30">
-      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
-          <div className="max-w-sm">
+    <footer className="bg-[#0d1b3e]">
+      <div className="mx-auto grid w-full max-w-[1140px] gap-8 px-5 py-10 md:px-8 lg:px-12">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div>
             <Link
               to="/"
-              className="mb-4 flex w-fit items-center gap-3 rounded-md focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+              className="flex w-fit items-center gap-3 rounded-md focus-visible:ring-[3px] focus-visible:ring-white/35 focus-visible:outline-none"
             >
               <img
                 src={gazelleLogo}
                 alt=""
                 aria-hidden="true"
-                className="h-11 w-auto object-contain brightness-0 dark:invert"
+                className="h-[38px] w-auto object-contain"
               />
-              <span className="font-heading text-[20px] leading-5 font-semibold text-foreground">
+              <span className="font-heading text-[16px] leading-5 font-bold text-white">
                 Nomos AI
               </span>
             </Link>
-            <p className="text-[16px] leading-[1.6] text-muted-foreground">
-              Private AI workflow systems for law firms that need control,
-              auditability, and cited answers on sensitive documents.
-            </p>
           </div>
           <nav
-            className="type-ui grid gap-3 text-muted-foreground sm:grid-cols-5 sm:gap-8"
+            className="type-ui grid gap-4 text-white/65 sm:grid-cols-5 sm:gap-7"
             aria-label="Footer"
           >
             <Link
               to="/product"
-              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+              className="rounded-md hover:text-white focus-visible:ring-[3px] focus-visible:ring-white/35 focus-visible:outline-none"
             >
               Product
             </Link>
             <Link
               to="/security"
-              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+              className="rounded-md hover:text-white focus-visible:ring-[3px] focus-visible:ring-white/35 focus-visible:outline-none"
             >
               Security
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
-            >
-              Contact
             </Link>
             <span aria-disabled="true" className="cursor-default">
               Privacy
@@ -58,12 +48,12 @@ export function SiteFooter() {
             </span>
           </nav>
         </div>
-        <Separator />
-        <div className="type-fine flex flex-col justify-between gap-3 text-text-subtle sm:flex-row">
-          <p>© 2026 Nomos AI, LLC. All rights reserved.</p>
+        <Separator className="bg-white/10" />
+        <div className="type-fine flex flex-col justify-between gap-3 text-white/45 sm:flex-row">
+          <p>© 2026 Nomos AI</p>
           <a
             href="mailto:hello@nomosiq.ai"
-            className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+            className="rounded-md hover:text-white focus-visible:ring-[3px] focus-visible:ring-white/35 focus-visible:outline-none"
           >
             hello@nomosiq.ai
           </a>

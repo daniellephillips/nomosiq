@@ -3,8 +3,9 @@ import { HugeiconsIcon } from "@hugeicons/react"
 
 import { useTheme } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme()
   const isDark = theme === "dark"
   const nextTheme = isDark ? "light" : "dark"
@@ -15,6 +16,7 @@ export function ThemeToggle() {
       type="button"
       variant="outline"
       size="icon"
+      className={cn(className)}
       aria-label={label}
       title={label}
       onClick={() => setTheme(nextTheme)}
