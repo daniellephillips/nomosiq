@@ -8,7 +8,6 @@ import {
   File01Icon,
   Folder01Icon,
   GridViewIcon,
-  LegalDocument01Icon,
   Link01Icon,
   LockPasswordIcon,
   PencilEdit01Icon,
@@ -74,6 +73,45 @@ const valueItems = [
   {
     title: "Attorney-controlled outputs",
     text: "Every answer stays reviewable, cited, and grounded in firm data.",
+  },
+]
+
+const weeklyHoursRows = [
+  {
+    label: "Document review",
+    before: "6h",
+    after: "2h",
+    beforeWidth: 78,
+    afterWidth: 32,
+  },
+  {
+    label: "Contract analysis",
+    before: "5h",
+    after: "1.5h",
+    beforeWidth: 66,
+    afterWidth: 26,
+  },
+  {
+    label: "Client responses",
+    before: "4h",
+    after: "1h",
+    beforeWidth: 52,
+    afterWidth: 18,
+  },
+  {
+    label: "Case prep",
+    before: "4.5h",
+    after: "1.5h",
+    beforeWidth: 60,
+    afterWidth: 26,
+  },
+  {
+    label: "Billable work",
+    before: "16h",
+    after: "24h",
+    beforeWidth: 110,
+    afterWidth: 220,
+    emphasis: true,
   },
 ]
 
@@ -314,6 +352,92 @@ function HeroMockup() {
   )
 }
 
+function WeeklyHoursChart() {
+  return (
+    <Card className="w-full rounded-2xl border border-border bg-card shadow-[0_18px_46px_rgba(13,27,62,0.09)] lg:max-w-[480px] lg:justify-self-end">
+      <CardContent className="p-6 md:p-8">
+        <p className="text-[16px] leading-[1.4] font-semibold tracking-[0.12em] text-[var(--cta-button)] uppercase">
+          Weekly hours breakdown
+        </p>
+        <p className="mt-3 text-[24px] leading-[1.2] font-bold text-foreground md:text-[26px]">
+          8+ hours recovered
+        </p>
+        <p className="mt-1 text-[16px] leading-[1.45] text-muted-foreground">
+          per attorney, per week
+        </p>
+
+        <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[16px] leading-[1.4] text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span
+              className="size-3 rounded-sm bg-muted-foreground/25"
+              aria-hidden="true"
+            />
+            Before Nomos AI
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <span
+              className="size-3 rounded-sm bg-[var(--cta-button)]"
+              aria-hidden="true"
+            />
+            After Nomos AI
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-4">
+          {weeklyHoursRows.map((row) => (
+            <div
+              key={row.label}
+              className={row.emphasis ? "border-t border-dashed pt-5" : ""}
+            >
+              <div className="grid gap-3 sm:grid-cols-[136px_minmax(0,1fr)] sm:items-center">
+                <p
+                  className={
+                    row.emphasis
+                      ? "text-[16px] leading-[1.4] font-semibold text-foreground"
+                      : "text-[16px] leading-[1.4] text-muted-foreground"
+                  }
+                >
+                  {row.label}
+                </p>
+                <div className="grid gap-2">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className="h-3 rounded-full bg-muted-foreground/25"
+                      style={{ width: `${row.beforeWidth}px` }}
+                    />
+                    <span className="min-w-8 text-[16px] leading-none text-muted-foreground">
+                      {row.before}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div
+                      className="h-3 rounded-full bg-[var(--cta-button)]"
+                      style={{ width: `${row.afterWidth}px` }}
+                    />
+                    <span className="min-w-8 text-[16px] leading-none font-semibold text-[var(--cta-button)]">
+                      {row.after}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 border-t pt-5">
+          <p className="flex items-start gap-3 text-[16px] leading-[1.5] text-muted-foreground">
+            <span
+              className="mt-[0.45em] size-2.5 shrink-0 rounded-full bg-success"
+              aria-hidden="true"
+            />
+            Based on reported outcomes from small law firm users
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
 function TrustStrip() {
   return (
     <section className="border-y bg-card" aria-label="Nomos AI value summary">
@@ -335,8 +459,8 @@ function TrustStrip() {
 
 function BillableTimeSection() {
   return (
-    <section className="bg-surface-1 py-[72px] md:py-24 lg:py-32">
-      <div className="mx-auto grid w-full max-w-[1140px] items-center gap-16 px-5 md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
+    <section className="bg-surface-1 py-[72px] md:py-24 lg:py-28">
+      <div className="mx-auto grid w-full max-w-[1140px] items-center gap-16 px-5 md:px-8 lg:grid-cols-2 lg:gap-24 lg:px-12">
         <div>
           <h2 className="type-h2 text-balance">
             Turn repetitive work into billable time
@@ -367,18 +491,7 @@ function BillableTimeSection() {
           </div>
         </div>
 
-        <Card className="min-h-[380px] rounded-2xl border bg-card">
-          <CardContent className="flex h-full min-h-[380px] flex-col items-center justify-center gap-4 p-10 text-center text-text-subtle">
-            <HugeiconsIcon
-              icon={LegalDocument01Icon}
-              className="size-12 opacity-45"
-              aria-hidden="true"
-            />
-            <p className="font-mono text-[16px] leading-[1.4]">
-              productivity chart
-            </p>
-          </CardContent>
-        </Card>
+        <WeeklyHoursChart />
       </div>
     </section>
   )
