@@ -275,7 +275,7 @@ function SectionHeader({ title, text }: { title: string; text?: string }) {
     <div className="mx-auto mb-14 max-w-3xl text-center md:mb-16">
       <h2 className="type-h2 text-balance">{title}</h2>
       {text ? (
-        <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-[1.65] text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.6] text-muted-foreground md:text-[18px] md:leading-[1.65]">
           {text}
         </p>
       ) : null}
@@ -468,7 +468,7 @@ function BillableTimeSection() {
           <h2 className="type-h2 text-balance">
             Turn repetitive work into billable time
           </h2>
-          <p className="mt-8 text-[18px] leading-[1.65] text-muted-foreground">
+          <p className="mt-8 text-[16px] leading-[1.6] text-muted-foreground md:text-[18px] md:leading-[1.65]">
             AI removes the busywork that slows you down so you can focus on
             strategy and clients.
           </p>
@@ -585,7 +585,7 @@ function SetupSection() {
                 >
                   {index + 1}
                 </div>
-                <h3 className="text-[20px] leading-[1.3] font-semibold text-foreground">
+                <h3 className="text-[18px] leading-[1.3] font-semibold text-foreground lg:text-[20px]">
                   {step.title}
                 </h3>
                 <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground">
@@ -614,7 +614,7 @@ function SecurityControlSection() {
                 >
                   <HugeiconsIcon icon={pillar.icon} className="size-6" />
                 </div>
-                <h2 className="text-[22px] leading-[1.25] font-semibold tracking-normal text-foreground">
+                <h2 className="text-[19px] leading-[1.3] font-semibold tracking-normal text-foreground lg:text-[22px] lg:leading-[1.25]">
                   {pillar.title}
                 </h2>
                 <p className="mt-4 text-[16px] leading-[1.6] text-muted-foreground">
@@ -659,7 +659,7 @@ function FaqSection() {
           <h2 className="type-h2 mt-5 text-balance">
             Questions small law firms ask before getting started
           </h2>
-          <p className="mt-6 text-[18px] leading-[1.65] text-muted-foreground">
+          <p className="mt-6 text-[16px] leading-[1.6] text-muted-foreground md:text-[18px] md:leading-[1.65]">
             Straight answers about setup, privacy and day-to-day use.
           </p>
           <Card className={`mt-10 ${referenceCardChrome}`}>
@@ -689,7 +689,7 @@ function FaqSection() {
               value={item.question}
               className={`${referenceCardChrome} overflow-hidden py-0 not-last:border-b-0 data-open:bg-card`}
             >
-              <AccordionTrigger className="py-6 text-left text-[18px] leading-[1.45] font-semibold text-foreground hover:text-primary">
+              <AccordionTrigger className="py-6 text-left text-[16px] leading-[1.5] font-semibold text-foreground hover:text-primary md:text-[18px] md:leading-[1.45]">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="bg-card pb-6 text-[16px] leading-[1.7] text-muted-foreground">
@@ -710,7 +710,7 @@ function FinalCtaSection() {
         <h2 className="type-h2 text-balance">
           See how this fits your workflow
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-[18px] leading-[1.65] text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.6] text-muted-foreground md:text-[18px] md:leading-[1.65]">
           Book a focused walkthrough of how AI agents can reduce your workload
           and free up billable time.
         </p>
@@ -743,10 +743,10 @@ export function HomePage() {
             <p className="text-[16px] leading-[1.4] font-semibold tracking-[0.12em] text-primary uppercase">
               AI Agents for Small Law Firms
             </p>
-            <h1 className="mt-5 max-w-2xl text-[clamp(38px,7vw,68px)] leading-[1.06] font-bold tracking-[-0.03em] text-balance text-foreground">
+            <h1 className="mt-5 max-w-2xl text-[clamp(38px,4.3vw,52px)] leading-[1.04] font-bold tracking-[-0.03em] text-balance text-foreground">
               Free up hours of legal work every week
             </h1>
-            <p className="mt-8 max-w-[520px] text-[20px] leading-[1.6] text-muted-foreground">
+            <p className="mt-8 max-w-[520px] text-[16px] leading-[1.6] text-muted-foreground md:text-[20px]">
               Private AI agents that handle document review, contract analysis,
               and case prep inside your existing workflows.
             </p>
