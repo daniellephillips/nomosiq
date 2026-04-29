@@ -11,20 +11,28 @@ import { demoUrl } from "@/lib/constants"
 
 const controls = [
   {
-    title: "Private deployment",
-    text: "Deploy in private cloud or on-prem environments so sensitive documents stay within firm-controlled infrastructure.",
+    title: "Private or firm-controlled deployment",
+    text: "Nomos AI is designed for private or firm-controlled environments, so client documents can stay within infrastructure your firm approves.",
   },
   {
-    title: "No external LLM APIs",
-    text: "Keep sensitive document workflows away from public AI tools and external model APIs.",
+    title: "No training on client data",
+    text: "Client files are handled as firm materials, not training data for shared models or public AI systems.",
   },
   {
-    title: "Audit visibility",
-    text: "Review workflow activity through audit visibility for supervision and internal accountability.",
+    title: "Source-linked answers",
+    text: "Answers are designed to point back to the documents, clauses, emails, or case materials that support them.",
   },
   {
     title: "Role-based access",
-    text: "Align AI document workflows with the firm's internal permission boundaries.",
+    text: "Access can be configured around firm roles, matters, and internal permission boundaries.",
+  },
+  {
+    title: "Audit visibility",
+    text: "Workflow activity can be reviewed so firms have visibility into searches, outputs, and review steps.",
+  },
+  {
+    title: "Attorney review before action",
+    text: "Nomos AI supports attorney review by making outputs easier to inspect before they are used in client work.",
   },
 ]
 
@@ -35,12 +43,11 @@ export function SecurityPage() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <Badge variant="secondary">Security</Badge>
           <h1 className="mt-5 max-w-4xl text-4xl leading-tight font-semibold tracking-normal sm:text-5xl">
-            AI adoption for legal teams starts with control.
+            AI adoption for law firms starts with control.
           </h1>
           <p className="mt-5 max-w-3xl text-[18px] leading-[1.65] text-text-body">
-            Nomos AI is built around the constraints that prevent firms from
-            using public AI tools on client documents: confidentiality,
-            supervision, access control, and auditability.
+            Nomos AI is designed for legal workflows where client documents,
+            source text, and review history need to stay under firm control.
           </p>
           <Button asChild className="mt-8" size="lg">
             <a href={demoUrl} target="_blank" rel="noreferrer">
@@ -72,12 +79,12 @@ export function SecurityPage() {
           <div>
             <Badge variant="secondary">Legal-market fit</Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-normal">
-              Built for firms that need explainable AI outputs.
+              Built for small firms that need answers they can verify.
             </h2>
             <p className="mt-4 text-[18px] leading-[1.65] text-text-body">
-              Nomos AI emphasizes cited retrieval and audit-ready workflows so
-              legal teams can review the source material behind an answer before
-              using it in client work.
+              Nomos AI helps attorneys search, summarize, and review sensitive
+              material with source links and review visibility, so every answer
+              can be checked before it is used in client work.
             </p>
           </div>
           <Accordion
@@ -85,28 +92,61 @@ export function SecurityPage() {
             collapsible
             className="rounded-lg border bg-background px-4"
           >
-            <AccordionItem value="ethics">
+            <AccordionItem value="processing">
+              <AccordionTrigger>Where does processing happen?</AccordionTrigger>
+              <AccordionContent>
+                Nomos AI is designed for private or firm-controlled deployment
+                models. During implementation, the deployment approach should be
+                reviewed against your firm&apos;s document storage, security
+                requirements, and client-confidentiality obligations.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="training">
               <AccordionTrigger>
-                Does Nomos AI replace attorney review?
+                Is client data used to train models?
               </AccordionTrigger>
               <AccordionContent>
-                No. The site positions Nomos AI as workflow infrastructure that
-                helps attorneys find, summarize, and inspect source material.
+                No. Nomos AI is positioned so client documents are not used to
+                train shared models or public AI systems. Client materials
+                should remain within the firm-approved environment.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="data">
-              <AccordionTrigger>What is the data boundary?</AccordionTrigger>
+            <AccordionItem value="verification">
+              <AccordionTrigger>How are answers verified?</AccordionTrigger>
               <AccordionContent>
-                The planned deployment model keeps processing inside the
-                firm&apos;s controlled environment instead of exposing sensitive
-                material to external AI providers.
+                Responses are designed to include source links back to the
+                documents or passages used to generate the answer. Attorneys
+                should review those sources before relying on an output.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="proof">
-              <AccordionTrigger>How should firms evaluate it?</AccordionTrigger>
+            <AccordionItem value="access">
+              <AccordionTrigger>
+                What access controls are supported?
+              </AccordionTrigger>
               <AccordionContent>
-                The brief recommends a live demo: upload a document, query it,
-                inspect the cited answer, and review audit visibility.
+                Access can be configured around the way your firm separates
+                matters, users, and responsibilities. The goal is to keep AI
+                workflows aligned with existing permission boundaries.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="systems">
+              <AccordionTrigger>
+                What systems can Nomos AI connect to?
+              </AccordionTrigger>
+              <AccordionContent>
+                Nomos AI is designed to work with common firm document sources,
+                email, and case or matter workflows. Specific systems and access
+                requirements should be reviewed during implementation.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="implementation">
+              <AccordionTrigger>
+                What happens during implementation?
+              </AccordionTrigger>
+              <AccordionContent>
+                A focused review should confirm the documents, workflows, user
+                roles, source-link expectations, and security requirements
+                before any live firm materials are connected.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
