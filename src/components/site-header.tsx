@@ -78,7 +78,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-muted/30 transition-[border-color,backdrop-filter,background-color] dark:bg-[var(--surface-brand)]",
+        "sticky top-0 z-50 border-b bg-[#ededed]/30 transition-[border-color,backdrop-filter,background-color] dark:bg-[var(--surface-brand)]",
         isScrolled
           ? "border-border backdrop-blur-md dark:border-white/10"
           : "border-border backdrop-blur-none dark:border-white/10"
