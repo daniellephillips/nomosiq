@@ -26,7 +26,6 @@ import { demoUrl } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { href: "/product", label: "Product" },
   { href: "/security", label: "Security" },
   { href: "/contact", label: "Contact" },
 ]

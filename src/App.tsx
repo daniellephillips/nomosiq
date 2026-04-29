@@ -1,11 +1,10 @@
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ContactPage } from "@/pages/contact"
 import { HomePage } from "@/pages/home"
-import { ProductPage } from "@/pages/product"
 import { SecurityPage } from "@/pages/security"
 
 type PageMeta = {
@@ -25,14 +24,6 @@ const pageMeta: Record<string, PageMeta> = {
     description:
       "Private AI agents that handle document review, contract analysis, and case prep inside existing small law firm workflows.",
     url: `${siteUrl}/`,
-    image: socialImage,
-    twitterCard: "summary",
-  },
-  "/product": {
-    title: "Product | Nomos AI",
-    description:
-      "Document ingestion, private search, cited answers, redaction support, timelines, and legal workflow automation.",
-    url: `${siteUrl}/product`,
     image: socialImage,
     twitterCard: "summary",
   },
@@ -90,7 +81,7 @@ export function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product" element={<Navigate to="/" replace />} />
           <Route path="/security" element={<SecurityPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

@@ -25,27 +25,21 @@ export function SiteFooter() {
             </Link>
           </div>
           <nav
-            className="type-ui grid gap-4 text-muted-foreground sm:grid-cols-5 sm:gap-7 dark:text-white/65"
+            className="type-ui grid gap-4 text-muted-foreground sm:grid-cols-2 sm:gap-7 dark:text-white/65"
             aria-label="Footer"
           >
-            <Link
-              to="/product"
-              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none dark:hover:text-white dark:focus-visible:ring-white/35"
-            >
-              Product
-            </Link>
             <Link
               to="/security"
               className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none dark:hover:text-white dark:focus-visible:ring-white/35"
             >
               Security
             </Link>
-            <span aria-disabled="true" className="cursor-default">
-              Privacy
-            </span>
-            <span aria-disabled="true" className="cursor-default">
-              Terms
-            </span>
+            <Link
+              to="/contact"
+              className="rounded-md hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none dark:hover:text-white dark:focus-visible:ring-white/35"
+            >
+              Contact
+            </Link>
           </nav>
         </div>
         <Separator className="dark:bg-white/10" />
