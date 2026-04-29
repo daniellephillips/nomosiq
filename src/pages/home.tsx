@@ -263,9 +263,12 @@ const faqItems = [
   {
     question: "What size firm is this for?",
     answer:
-      "Nomos AI is built specifically for small law firms, typically 2 to 30 attorneys. The product is designed around the workflows and constraints of smaller practices.",
+      "Nomos AI is built specifically for small law firms, typically 2 to 15 attorneys. The product is designed around the workflows and constraints of smaller practices.",
   },
 ]
+
+const referenceCardChrome =
+  "rounded-[14px] border border-border border-t-primary/20 bg-card shadow-[0_4px_24px_rgba(13,27,62,0.07),0_1px_4px_rgba(13,27,62,0.05)] transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-primary/25 hover:border-t-primary/45 hover:shadow-[0_8px_30px_rgba(13,27,62,0.09),0_2px_8px_rgba(27,73,212,0.08)]"
 
 function SectionHeader({ title, text }: { title: string; text?: string }) {
   return (
@@ -574,7 +577,7 @@ function SetupSection() {
         <SectionHeader title="Simple setup. Immediate impact." />
         <div className="grid gap-6 md:grid-cols-3 md:gap-8">
           {setupSteps.map((step, index) => (
-            <Card key={step.title} className="rounded-[14px] border bg-card">
+            <Card key={step.title} className={referenceCardChrome}>
               <CardContent className="p-8 text-center md:p-10">
                 <div
                   className="mx-auto mb-6 flex size-12 items-center justify-center rounded-full bg-[var(--cta-button)] text-[18px] leading-none font-bold text-primary-foreground"
@@ -603,7 +606,7 @@ function SecurityControlSection() {
       <div className="mx-auto w-full max-w-[1140px] px-5 md:px-8 lg:px-12">
         <div className="grid gap-6 md:grid-cols-3 md:gap-8">
           {securityPillars.map((pillar) => (
-            <Card key={pillar.title} className="rounded-[14px] border bg-card">
+            <Card key={pillar.title} className={referenceCardChrome}>
               <CardContent className="p-8 md:p-10">
                 <div
                   className="mb-6 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
@@ -659,7 +662,7 @@ function FaqSection() {
           <p className="mt-6 text-[18px] leading-[1.65] text-muted-foreground">
             Straight answers about setup, privacy and day-to-day use.
           </p>
-          <Card className="mt-10 rounded-xl border bg-card">
+          <Card className={`mt-10 ${referenceCardChrome}`}>
             <CardContent className="flex items-start gap-5 p-7">
               <div
                 className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"
@@ -675,13 +678,21 @@ function FaqSection() {
           </Card>
         </div>
 
-        <Accordion type="single" collapsible className="border-t">
+        <Accordion
+          type="single"
+          collapsible
+          className="gap-4 overflow-visible rounded-none border-0 bg-transparent"
+        >
           {faqItems.map((item) => (
-            <AccordionItem key={item.question} value={item.question}>
+            <AccordionItem
+              key={item.question}
+              value={item.question}
+              className={`${referenceCardChrome} overflow-hidden py-0 not-last:border-b-0 data-open:bg-card`}
+            >
               <AccordionTrigger className="py-6 text-left text-[18px] leading-[1.45] font-semibold text-foreground hover:text-primary">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="pb-6 text-[16px] leading-[1.7] text-muted-foreground">
+              <AccordionContent className="bg-card pb-6 text-[16px] leading-[1.7] text-muted-foreground">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
