@@ -15,8 +15,9 @@ export function ContactPage() {
           See private AI workflows on legal documents.
         </h1>
         <p className="mt-5 text-[18px] leading-[1.65] text-text-body">
-          Schedule time to review document ingestion, cited answers, redaction
-          checks, workflow automation, and deployment fit for your firm.
+          Schedule a focused walkthrough of the document workflows that take
+          the most attorney or staff time, from review and contract analysis to
+          case prep and cited answers.
         </p>
         <Button asChild className="mt-8" size="lg">
           <a href={demoUrl} target="_blank" rel="noreferrer">
@@ -36,15 +37,15 @@ export function ContactPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Demo fit checklist</CardTitle>
+          <CardTitle>What we&apos;ll cover</CardTitle>
         </CardHeader>
         <CardContent>
-          <form className="grid gap-5" aria-label="Demo fit checklist">
+          <form className="grid gap-5" aria-label="Demo discussion topics">
             <div className="grid gap-2">
               <Label htmlFor="firm-size">Firm size</Label>
               <Input
                 id="firm-size"
-                placeholder="Example: 25 attorneys and staff"
+                placeholder="Example: 2 to 15 attorneys"
                 readOnly
               />
             </div>
@@ -57,16 +58,17 @@ export function ContactPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="workflow">Primary workflow</Label>
+              <Label htmlFor="workflow">Workflows to review</Label>
               <Textarea
                 id="workflow"
-                placeholder="Example: discovery review, redaction checks, contract review"
+                placeholder="Example: document review, contract analysis, case prep"
                 readOnly
               />
             </div>
             <p className="text-[16px] leading-[1.6] text-muted-foreground">
-              This checklist is informational in v1. Demo requests are handled
-              through Calendly.
+              Bring a workflow you want to improve and where the related
+              documents live today. After the call, we&apos;ll identify whether a
+              small pilot or focused automation is the right next step.
             </p>
             <Button asChild>
               <a href={demoUrl} target="_blank" rel="noreferrer">
